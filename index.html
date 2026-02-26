@@ -4,29 +4,436 @@
 <head>
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
-  <title>Full Stack Developer Portfolio</title>
-  <meta content="" name="description">
-  <meta content="" name="keywords">
+  <title>Albina Khadka — Full Stack Developer</title>
+  <meta content="Full Stack Web Developer Portfolio - Laravel, PHP, JavaScript" name="description">
 
   <!-- Favicons -->
   <link href="assets/img/resume.png" rel="icon">
   <link href="assets/img/resume.png" rel="apple-touch-icon">
+
   <!-- Fonts -->
   <link href="https://fonts.googleapis.com" rel="preconnect">
   <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
-  <link
-    href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Raleway:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
-    rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&family=Poppins:wght@300;400;500;600;700;800&family=Raleway:wght@300;400;500;600;700&family=Sora:wght@400;600;700;800&family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
-
-  <!-- Vendor CSS Files -->
+  <!-- Vendor CSS -->
   <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
   <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
   <link href="assets/vendor/aos/aos.css" rel="stylesheet">
   <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
   <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
   <link href="assets/css/main.css" rel="stylesheet">
+
+  <style>
+    /* ════════════════════════════════════════
+       SHARED VARIABLES
+    ════════════════════════════════════════ */
+    :root {
+      --accent:       #7c3aed;
+      --accent-hover: #6d28d9;
+      --accent-light: #ede9fe;
+      --text-dark:    #111827;
+      --text-mid:     #4b5563;
+      --text-light:   #6b7280;
+      --border:       #e5e7eb;
+      --white:        #ffffff;
+    }
+
+    /* ════════════════════════════════════════
+       TECH STACK SECTION
+    ════════════════════════════════════════ */
+    .skills.section { padding: 80px 0 90px; }
+
+    .ts-title-wrap { text-align: center; margin-bottom: 56px; }
+
+    .ts-heading {
+      font-family: 'Sora', sans-serif;
+      font-size: clamp(26px, 3.5vw, 38px);
+      font-weight: 800;
+      color: var(--text-dark);
+      margin-bottom: 12px;
+      letter-spacing: -0.4px;
+    }
+
+    .ts-title-line {
+      width: 52px; height: 4px;
+      border-radius: 2px;
+      background: linear-gradient(90deg, #7c3aed, #a78bfa);
+      margin: 0 auto 14px;
+    }
+
+    .ts-subtitle {
+      font-size: 15px; color: var(--text-light);
+      max-width: 460px; margin: 0 auto; line-height: 1.7;
+    }
+
+    .ts-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 28px;
+    }
+    @media (max-width: 991px) { .ts-grid { grid-template-columns: repeat(2,1fr); } }
+    @media (max-width: 575px)  { .ts-grid { grid-template-columns: 1fr; } }
+
+    .ts-category {
+      border-radius: 24px;
+      padding: 32px 26px 28px;
+      position: relative;
+      overflow: hidden;
+      transition: transform 0.32s cubic-bezier(.34,1.56,.64,1), box-shadow 0.3s ease;
+    }
+    .ts-category:hover { transform: translateY(-7px); }
+
+    .ts-frontend {
+      background: linear-gradient(145deg, #eff6ff 0%, #e0e7ff 100%);
+      box-shadow: 0 12px 36px rgba(59,130,246,0.13);
+    }
+    .ts-backend {
+      background: linear-gradient(145deg, #faf5ff 0%, #ede9fe 100%);
+      box-shadow: 0 12px 36px rgba(124,58,237,0.13);
+    }
+    .ts-tools {
+      background: linear-gradient(145deg, #f0fdf4 0%, #d1fae5 100%);
+      box-shadow: 0 12px 36px rgba(16,185,129,0.13);
+    }
+
+    .ts-category::before {
+      content: '';
+      position: absolute;
+      top: -40px; right: -40px;
+      width: 130px; height: 130px;
+      border-radius: 50%;
+      opacity: 0.18;
+    }
+    .ts-frontend::before { background: #3b82f6; }
+    .ts-backend::before  { background: #7c3aed; }
+    .ts-tools::before    { background: #10b981; }
+
+    .ts-cat-header {
+      display: flex; align-items: center;
+      gap: 14px; margin-bottom: 26px;
+    }
+
+    .ts-cat-icon {
+      width: 50px; height: 50px;
+      border-radius: 14px;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 22px; flex-shrink: 0;
+    }
+    .ts-icon-fe    { background: #3b82f6; color: #fff; box-shadow: 0 6px 18px rgba(59,130,246,0.35); }
+    .ts-icon-be    { background: #7c3aed; color: #fff; box-shadow: 0 6px 18px rgba(124,58,237,0.35); }
+    .ts-icon-tools { background: #10b981; color: #fff; box-shadow: 0 6px 18px rgba(16,185,129,0.35); }
+
+    .ts-cat-label {
+      font-family: 'Sora', sans-serif;
+      font-size: 18px; font-weight: 800;
+      color: var(--text-dark); line-height: 1.2;
+    }
+    .ts-cat-desc { font-size: 12px; color: var(--text-light); margin-top: 3px; font-weight: 500; }
+
+    .ts-skills-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+
+    .ts-skill-item {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      background: rgba(255,255,255,0.75);
+      backdrop-filter: blur(6px);
+      border-radius: 12px;
+      padding: 10px 14px;
+      border: 1px solid rgba(255,255,255,0.9);
+      box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+      transition: transform 0.22s ease, box-shadow 0.22s ease, background 0.22s ease;
+      cursor: default;
+      animation: tsBadgeIn 0.4s ease both;
+    }
+    .ts-skill-item:hover {
+      transform: scale(1.07);
+      background: rgba(255,255,255,0.95);
+      box-shadow: 0 6px 18px rgba(0,0,0,0.1);
+    }
+
+    .ts-skill-icon {
+      width: 30px; height: 30px;
+      display: flex; align-items: center; justify-content: center;
+      flex-shrink: 0;
+    }
+    .ts-skill-icon img { width: 28px; height: 28px; object-fit: contain; }
+    .ts-emoji { font-size: 20px; line-height: 1; }
+
+    .ts-skill-name {
+      font-size: 13px; font-weight: 700;
+      color: #1f2937;
+      font-family: 'DM Sans', 'Poppins', sans-serif;
+      white-space: nowrap;
+    }
+
+    .ts-frontend .ts-skill-item:nth-child(1){animation-delay:.10s}
+    .ts-frontend .ts-skill-item:nth-child(2){animation-delay:.17s}
+    .ts-frontend .ts-skill-item:nth-child(3){animation-delay:.24s}
+    .ts-frontend .ts-skill-item:nth-child(4){animation-delay:.31s}
+    .ts-backend  .ts-skill-item:nth-child(1){animation-delay:.15s}
+    .ts-backend  .ts-skill-item:nth-child(2){animation-delay:.22s}
+    .ts-backend  .ts-skill-item:nth-child(3){animation-delay:.29s}
+    .ts-backend  .ts-skill-item:nth-child(4){animation-delay:.36s}
+    .ts-tools    .ts-skill-item:nth-child(1){animation-delay:.20s}
+    .ts-tools    .ts-skill-item:nth-child(2){animation-delay:.27s}
+    .ts-tools    .ts-skill-item:nth-child(3){animation-delay:.34s}
+    .ts-tools    .ts-skill-item:nth-child(4){animation-delay:.41s}
+
+    @keyframes tsBadgeIn {
+      from { opacity: 0; transform: scale(0.8) translateY(8px); }
+      to   { opacity: 1; transform: scale(1) translateY(0); }
+    }
+
+    /* ════════════════════════════════════════
+       PORTFOLIO SECTION
+    ════════════════════════════════════════ */
+    .portfolio-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 28px;
+    }
+    @media (max-width: 991px) { .portfolio-grid { grid-template-columns: repeat(2,1fr); gap: 20px; } }
+    @media (max-width: 575px)  { .portfolio-grid { grid-template-columns: 1fr; gap: 16px; } }
+
+    .pf-card {
+      background: var(--white);
+      border-radius: 20px;
+      overflow: hidden;
+      border: 1px solid var(--border);
+      box-shadow: 0 8px 28px rgba(124,58,237,0.07);
+      transition: transform 0.35s cubic-bezier(.34,1.56,.64,1), box-shadow 0.35s ease;
+      cursor: pointer;
+      display: flex;
+      flex-direction: column;
+      height: 100%;
+      animation: pfFadeUp 0.55s ease both;
+    }
+    .pf-card:hover {
+      transform: translateY(-8px) scale(1.015);
+      box-shadow: 0 28px 52px rgba(124,58,237,0.18);
+    }
+    .pf-card:active { transform: translateY(-3px) scale(0.99); }
+
+    .pf-card:nth-child(1){animation-delay:.05s}
+    .pf-card:nth-child(2){animation-delay:.12s}
+    .pf-card:nth-child(3){animation-delay:.19s}
+    .pf-card:nth-child(4){animation-delay:.26s}
+    .pf-card:nth-child(5){animation-delay:.33s}
+    .pf-card:nth-child(6){animation-delay:.40s}
+    .pf-card:nth-child(7){animation-delay:.47s}
+
+    @keyframes pfFadeUp {
+      from { opacity:0; transform: translateY(30px); }
+      to   { opacity:1; transform: translateY(0); }
+    }
+
+    .pf-img-wrap { position: relative; overflow: hidden; flex-shrink: 0; }
+
+    .pf-img {
+      width: 100%; height: 200px;
+      object-fit: cover; display: block;
+      transition: transform 0.5s ease;
+    }
+    .pf-card:hover .pf-img { transform: scale(1.08); }
+
+    .pf-overlay {
+      position: absolute; inset: 0;
+      background: linear-gradient(160deg, rgba(109,40,217,0.88), rgba(124,58,237,0.72));
+      display: flex; flex-direction: column;
+      align-items: center; justify-content: center; gap: 10px;
+      opacity: 0;
+      transition: opacity 0.3s ease;
+    }
+    .pf-card:hover .pf-overlay { opacity: 1; }
+
+    .pf-overlay-icon {
+      width: 54px; height: 54px; border-radius: 50%;
+      background: rgba(255,255,255,0.18);
+      border: 2px solid rgba(255,255,255,0.55);
+      display: flex; align-items: center; justify-content: center;
+      color: #fff; font-size: 22px;
+      transform: scale(0.65);
+      transition: transform 0.35s cubic-bezier(.34,1.56,.64,1) .05s;
+    }
+    .pf-card:hover .pf-overlay-icon { transform: scale(1); }
+
+    .pf-overlay-text {
+      color: #fff;
+      font-family: 'Sora', sans-serif;
+      font-size: 13px; font-weight: 600; letter-spacing: 0.5px;
+      transform: translateY(10px); opacity: 0;
+      transition: transform 0.3s ease 0.1s, opacity 0.3s ease 0.1s;
+    }
+    .pf-card:hover .pf-overlay-text { transform: translateY(0); opacity: 1; }
+
+    .pf-body { padding: 22px; display: flex; flex-direction: column; flex: 1; }
+
+    .pf-body h4 {
+      font-family: 'Sora', sans-serif;
+      font-size: 16px; font-weight: 700;
+      color: var(--text-dark); margin-bottom: 8px; line-height: 1.35;
+    }
+
+    .pf-body p {
+      font-size: 13.5px; line-height: 1.65;
+      color: var(--text-mid); margin-bottom: 14px; flex: 1;
+      display: -webkit-box;
+      -webkit-line-clamp: 3;
+      -webkit-box-orient: vertical;
+      overflow: hidden;
+    }
+
+    .pf-tech { display: flex; flex-wrap: wrap; gap: 6px; margin-bottom: 18px; }
+    .pf-tech span {
+      font-size: 11px; font-weight: 600;
+      padding: 3px 10px; border-radius: 999px;
+      background: var(--accent-light); color: var(--accent);
+      border: 1px solid #ddd6fe;
+    }
+
+    .pf-footer-row {
+      display: flex; align-items: center;
+      justify-content: space-between; gap: 10px;
+      margin-top: auto;
+    }
+
+    .pf-btn-details {
+      display: inline-flex; align-items: center; gap: 5px;
+      font-size: 13px; font-weight: 600;
+      padding: 7px 14px; border-radius: 10px;
+      background: transparent; color: var(--accent);
+      border: 1.5px solid var(--accent); cursor: pointer;
+      transition: background 0.2s ease;
+      font-family: 'DM Sans', 'Poppins', sans-serif;
+    }
+    .pf-btn-details:hover { background: var(--accent-light); }
+
+    .pf-btn-visit {
+      display: inline-flex; align-items: center; gap: 6px;
+      font-size: 13px; font-weight: 600;
+      padding: 7px 16px; border-radius: 10px;
+      background: var(--accent); color: #fff;
+      text-decoration: none; border: none; cursor: pointer;
+      transition: background 0.25s ease, transform 0.2s ease;
+    }
+    .pf-btn-visit:hover { background: var(--accent-hover); transform: scale(1.04); color: #fff; }
+
+    /* ════════════════════════════════════════
+       PORTFOLIO MODAL
+    ════════════════════════════════════════ */
+    .pf-modal-backdrop {
+      position: fixed; inset: 0;
+      background: rgba(17,24,39,0.65);
+      backdrop-filter: blur(8px);
+      z-index: 9999;
+      display: flex; align-items: center; justify-content: center;
+      padding: 20px;
+      opacity: 0; pointer-events: none;
+      transition: opacity 0.3s ease;
+    }
+    .pf-modal-backdrop.open { opacity: 1; pointer-events: all; }
+
+    .pf-modal-box {
+      background: var(--white);
+      border-radius: 24px;
+      max-width: 660px; width: 100%;
+      box-shadow: 0 40px 90px rgba(0,0,0,0.25);
+      transform: scale(0.86) translateY(28px);
+      transition: transform 0.38s cubic-bezier(.34,1.4,.64,1), opacity 0.3s ease;
+      opacity: 0;
+      max-height: 90vh; overflow-y: auto;
+      scrollbar-width: thin; scrollbar-color: #d1d5db transparent;
+    }
+    .pf-modal-box::-webkit-scrollbar { width: 5px; }
+    .pf-modal-box::-webkit-scrollbar-thumb { background: #d1d5db; border-radius: 10px; }
+    .pf-modal-backdrop.open .pf-modal-box { transform: scale(1) translateY(0); opacity: 1; }
+
+    .pf-modal-hero { position: relative; }
+
+    .pf-modal-img {
+      width: 100%; height: 300px;
+      object-fit: cover; object-position: top center;
+      display: block;
+    }
+
+    /* Close button — floated over image top-right */
+    .pf-modal-close {
+      position: absolute; top: 12px; right: 12px;
+      width: 36px; height: 36px; border-radius: 50%;
+      background: rgba(255,255,255,0.92);
+      backdrop-filter: blur(4px);
+      border: none; cursor: pointer;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 17px; color: #111827;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.15);
+      transition: background 0.2s, color 0.2s, transform 0.2s;
+      z-index: 10;
+    }
+    .pf-modal-close:hover { background: #fee2e2; color: #dc2626; transform: scale(1.1); }
+
+    .pf-modal-badge {
+      position: absolute; bottom: 14px; left: 18px;
+      background: rgba(255,255,255,0.92);
+      backdrop-filter: blur(4px);
+      padding: 5px 14px; border-radius: 999px;
+      font-family: 'Sora', sans-serif;
+      font-size: 12px; font-weight: 700; color: var(--accent);
+      border: 1px solid #ddd6fe;
+    }
+
+    .pf-modal-content { padding: 28px 30px 30px; }
+
+    .pf-modal-title {
+      font-family: 'Sora', sans-serif;
+      font-size: clamp(18px,3vw,22px);
+      font-weight: 800; color: var(--text-dark);
+      line-height: 1.3; margin-bottom: 12px;
+    }
+
+    .pf-modal-desc {
+      font-size: 14.5px; color: var(--text-mid);
+      line-height: 1.78; margin-bottom: 22px;
+    }
+
+    .pf-modal-label {
+      font-family: 'Sora', sans-serif;
+      font-size: 10.5px; font-weight: 700;
+      letter-spacing: 1.2px; text-transform: uppercase;
+      color: var(--text-light); margin-bottom: 10px;
+    }
+
+    .pf-modal-tech { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 28px; }
+    .pf-modal-tech span {
+      font-size: 12px; font-weight: 600;
+      padding: 5px 14px; border-radius: 999px;
+      background: var(--accent-light); color: var(--accent);
+      border: 1px solid #ddd6fe;
+    }
+
+    .pf-modal-cta {
+      display: inline-flex; align-items: center; gap: 8px;
+      font-size: 14px; font-weight: 700;
+      padding: 12px 26px; border-radius: 12px;
+      background: var(--accent); color: #fff;
+      text-decoration: none;
+      transition: background 0.25s, transform 0.2s;
+    }
+    .pf-modal-cta:hover { background: var(--accent-hover); transform: scale(1.03); color: #fff; }
+
+    @media (max-width: 480px) {
+      .pf-modal-img { height: 220px; }
+      .pf-modal-content { padding: 20px; }
+      .pf-footer-row { flex-wrap: wrap; }
+      .pf-btn-details, .pf-btn-visit { flex: 1; justify-content: center; }
+    }
+  </style>
 </head>
 
 <body class="index-page">
@@ -46,63 +453,56 @@
       <a href="mailto:khadkaalbina64@gmail.com" class="gmail" target="_blank">
         <i class="bi bi-envelope-fill"></i>
       </a>
-
       <a href="https://github.com/AlbinaKhadka" class="github" target="_blank">
         <i class="bi bi-github"></i>
       </a>
-      <a href="https://www.linkedin.com/in/albinakhadka/" class="linkedin"><i class="bi bi-linkedin"></i></a>
+      <a href="https://www.linkedin.com/in/albinakhadka/" class="linkedin">
+        <i class="bi bi-linkedin"></i>
+      </a>
     </div>
 
     <nav id="navmenu" class="navmenu">
       <ul>
-        <li><a href="#hero" class="active"><i class="bi bi-house navicon"></i>Home</a></li>
+        <li><a href="#hero" class="active"><i class="bi bi-house navicon"></i> Home</a></li>
         <li><a href="#about"><i class="bi bi-person navicon"></i> About</a></li>
         <li><a href="#skills"><i class="bi bi-stack navicon"></i> Tech Stack</a></li>
         <li><a href="#resume"><i class="bi bi-file-earmark-text navicon"></i> Resume</a></li>
         <li><a href="#portfolio"><i class="bi bi-images navicon"></i> Projects</a></li>
         <li><a href="#services"><i class="bi bi-hdd-stack navicon"></i> Services</a></li>
-
+      </ul>
     </nav>
-
   </header>
 
   <main class="main">
 
-    <!-- Hero Section -->
+    <!-- ── Hero ──────────────────────────────── -->
     <section id="hero" class="hero section dark-background">
-
-      <img src="assets/img/hero-bg.jpg" alt="" data-aos="fade-in" class="">
-
+      <img src="assets/img/me.png" alt="" data-aos="fade-in">
       <div class="container" data-aos="fade-up" data-aos-delay="100">
         <h2>ALBINA KHADKA</h2>
-        <p>I'm <span class="typed" data-typed-items="Full Stack Developer"></span><span
-            class="typed-cursor typed-cursor--blink" aria-hidden="true"></span><span
-            class="typed-cursor typed-cursor--blink" aria-hidden="true"></span></p>
+        <p>I'm <span class="typed" data-typed-items="Full Stack Developer"></span>
+          <span class="typed-cursor typed-cursor--blink" aria-hidden="true"></span>
+        </p>
       </div>
+    </section>
 
-    </section><!-- /Hero Section -->
-
-    <!-- About Section -->
+    <!-- ── About ─────────────────────────────── -->
     <section id="about" class="about section">
-
-      <!-- Section Title -->
       <div class="container section-title" data-aos="fade-up">
         <h2>About</h2>
         <p>Web Developer with 1.5+ years of experience in Laravel, PHP, JavaScript, HTML, and CSS. Skilled in clean
-          coding, REST API integration, debugging, and delivering high-performance.</p>
-      </div><!-- End Section Title -->
-
+          coding, REST API integration, debugging, and delivering high-performance solutions.</p>
+      </div>
       <div class="container" data-aos="fade-up" data-aos-delay="100">
-
         <div class="row gy-4 justify-content-center">
           <div class="col-lg-4">
-            <img src="assets/img/my-profile-img.jpg" class="img-fluid" alt="">
+            <img src="assets/img/me.png" class="img-fluid" alt="">
           </div>
           <div class="col-lg-8 content">
-            <h2> Web Developer</h2>
+            <h2>Web Developer</h2>
             <p class="fst-italic py-3">
-              Web Developer with 1.5+ years of experience in Laravel, PHP, JavaScript, HTML, and CSS. Skilled in clean
-              coding, REST API integration, debugging, and delivering high-performance.
+              Web Developer with 1.5+ years of experience in Laravel, PHP, JavaScript, HTML, and CSS.
+              Skilled in clean coding, REST API integration, debugging, and delivering high-performance solutions.
             </p>
             <div class="row">
               <div class="col-lg-6">
@@ -112,381 +512,225 @@
               </div>
               <div class="col-lg-6">
                 <ul>
-
                   <li><i class="bi bi-chevron-right"></i> <strong>Degree:</strong> <span>Bachelor</span></li>
-                  <li><i class="bi bi-chevron-right"></i> <strong>Email:</strong> <span>khadkaalbina64@gmail.com</span>
-                  </li>
+                  <li><i class="bi bi-chevron-right"></i> <strong>Email:</strong> <span>khadkaalbina64@gmail.com</span></li>
                   <li><i class="bi bi-chevron-right"></i> <strong>Freelance:</strong> <span>Available</span></li>
                 </ul>
               </div>
             </div>
-
           </div>
         </div>
-
       </div>
+    </section>
 
-    </section><!-- /About Section -->
-    <!-- Skills Section -->
+    <!-- ── Tech Stack ─────────────────────────── -->
     <section id="skills" class="skills section light-background">
-
       <div class="container">
-        <div>
-          <h1>Tech Stack <br />
-            <span style="font-size: 40px; font-weight: 500"></span>
-          </h1>
+
+        <div class="ts-title-wrap" data-aos="fade-up">
+          <h2 class="ts-heading">Tech Stack</h2>
+          <div class="ts-title-line"></div>
+          <p class="ts-subtitle">Technologies and tools I work with professionally</p>
         </div>
 
-        <div class="right-section">
-          <div class="dotted-arc"></div>
-          <div class="main-circle">
-            <img src="" width="90" />
-          </div>
+        <div class="ts-grid" data-aos="fade-up" data-aos-delay="100">
 
-
-          <div class="icon-node node-top">
-            <div class="node-circle">
-              <img src="assets/img/skills/html.png" />
-            </div>
-            <div class="label">HTML</div>
-          </div>
-
-
-          <div class="icon-node node-mid">
-            <div class="node-circle">
-              <img src="assets/img/skills/css.png" />
-            </div>
-            <div class="label">CSS</div>
-          </div>
-
-          <div class="icon-node node-mid">
-            <div class="node-circle">
-              <img src="assets/img/skills/js.png" />
-            </div>
-            <div class="label">JavaScript</div>
-          </div>
-
-          <div class="icon-node node-mid">
-            <div class="node-circle">
-              <img src="assets/img/skills/php.png" />
-            </div>
-            <div class="label">PHP</div>
-          </div>
-
-          <div class="icon-node node-mid">
-            <div class="node-circle">
-              <img src="assets/img/skills/gitlab.png" />
-            </div>
-            <div class="label">Gitlab</div>
-          </div>
-          <div class="icon-node node-mid">
-            <div class="node-circle">
-              <img src="assets/img/skills/trello.png" />
-            </div>
-            <div class="label">Trello</div>
-          </div>
-          <div class="icon-node node-mid">
-            <div class="node-circle">
-              <img src="assets/img/skills/mysql.png" />
-            </div>
-            <div class="label">MySql</div>
-          </div>
-        </div>
-      </div>
-    </section><!-- /Skills Section -->
-
-    <!-- Resume Section -->
- <section id="resume" class="resume section">
-
-  <div class="container section-title">
-    <h2>Work Experience</h2>
-    <p>My professional experience and industry exposure</p>
-  </div>
-
-  <div class="container">
-    <div class="row">
-      <div class="col">
-        <div class="main-timeline">
-          <!-- EXPERIENCE 1 -->
-          <div class="timeline">
-            <a href="#" class="timeline-content">
-              <span class="timeline-year">2024</span>
-              <div class="timeline-icon">
-                <i class="fa fa-laptop" aria-hidden="true"></i>
+          <!-- Frontend -->
+          <div class="ts-category ts-frontend">
+            <div class="ts-cat-header">
+              <div class="ts-cat-icon ts-icon-fe"><i class="bi bi-layout-text-window-reverse"></i></div>
+              <div>
+                <div class="ts-cat-label">Frontend</div>
+                <div class="ts-cat-desc">Designs</div>
               </div>
-
-              <div class="content">
-                <h3 class="title">Web Developer</h3>
-                <p class="description">
-                  <strong>Krizmatic Digital Solution</strong><br>
-              
-                  • Contributed to multiple team-based web development projects<br>
-                  • Worked on vendor record management & workflow improvements<br>
-                  • Developed appointment booking features<br>
-                  • Built admin panels for government mobile applications
-                </p>
+            </div>
+            <div class="ts-skills-list">
+              <div class="ts-skill-item">
+                <div class="ts-skill-icon"><img src="assets/img/skills/html.png" alt="HTML" onerror="this.parentElement.innerHTML='<span class=ts-emoji>🌐</span>'"/></div>
+                <span class="ts-skill-name">HTML5</span>
               </div>
-            </a>
+              <div class="ts-skill-item">
+                <div class="ts-skill-icon"><img src="assets/img/skills/css.png" alt="CSS" onerror="this.parentElement.innerHTML='<span class=ts-emoji>🎨</span>'"/></div>
+                <span class="ts-skill-name">CSS3</span>
+              </div>
+              <div class="ts-skill-item">
+                <div class="ts-skill-icon"><img src="assets/img/skills/js.png" alt="JavaScript" onerror="this.parentElement.innerHTML='<span class=ts-emoji>⚡</span>'"/></div>
+                <span class="ts-skill-name">JavaScript</span>
+              </div>
+              <div class="ts-skill-item">
+                <div class="ts-skill-icon"><img src="assets/img/skills/bootstrap.png" alt="Bootstrap" onerror="this.parentElement.innerHTML='<span class=ts-emoji>🅱</span>'"/></div>
+                <span class="ts-skill-name">Bootstrap</span>
+              </div>
+            </div>
           </div>
 
-          <!-- EXPERIENCE 2 -->
-          <div class="timeline">
-            <a href="#" class="timeline-content">
-              <span class="timeline-year">2024</span>
-
-              <div class="timeline-icon">
-                <i class="fa fa-code" aria-hidden="true"></i>
+          <!-- Backend -->
+          <div class="ts-category ts-backend">
+            <div class="ts-cat-header">
+              <div class="ts-cat-icon ts-icon-be"><i class="bi bi-server"></i></div>
+              <div>
+                <div class="ts-cat-label">Backend</div>
+                <div class="ts-cat-desc">Server &amp; Database</div>
               </div>
-
-              <div class="content">
-                <h3 class="title">Web Developer (Intern)</h3>
-                <p class="description">
-                  <strong>Krizmatic Digital Solution, Lalitpur</strong><br>
-                
-                  • Built dynamic web applications using Laravel & Eloquent ORM<br>
-                  • Collaborated with the team to deliver features and fix bugs
-                </p>
+            </div>
+            <div class="ts-skills-list">
+              <div class="ts-skill-item">
+                <div class="ts-skill-icon"><img src="assets/img/skills/php.png" alt="PHP" onerror="this.parentElement.innerHTML='<span class=ts-emoji>🐘</span>'"/></div>
+                <span class="ts-skill-name">PHP</span>
               </div>
-            </a>
+              <div class="ts-skill-item">
+                <div class="ts-skill-icon"><img src="assets/img/skills/laravel.png" alt="Laravel" onerror="this.parentElement.innerHTML='<span class=ts-emoji>🔴</span>'"/></div>
+                <span class="ts-skill-name">Laravel</span>
+              </div>
+              <div class="ts-skill-item">
+                <div class="ts-skill-icon"><img src="assets/img/skills/mysql.png" alt="MySQL" onerror="this.parentElement.innerHTML='<span class=ts-emoji>🗄️</span>'"/></div>
+                <span class="ts-skill-name">MySQL</span>
+              </div>
+              <div class="ts-skill-item">
+                <div class="ts-skill-icon"><img src="assets/img/skills/voyager.png" alt="Voyager" onerror="this.parentElement.innerHTML='<span class=ts-emoji>🚀</span>'"/></div>
+                <span class="ts-skill-name">Voyager</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Tools -->
+          <div class="ts-category ts-tools">
+            <div class="ts-cat-header">
+              <div class="ts-cat-icon ts-icon-tools"><i class="bi bi-tools"></i></div>
+              <div>
+                <div class="ts-cat-label">Tools</div>
+                <div class="ts-cat-desc">Dev &amp; Workflow</div>
+              </div>
+            </div>
+            <div class="ts-skills-list">
+              <div class="ts-skill-item">
+                <div class="ts-skill-icon"><img src="assets/img/skills/gitlab.png" alt="GitLab" onerror="this.parentElement.innerHTML='<span class=ts-emoji>🦊</span>'"/></div>
+                <span class="ts-skill-name">GitLab</span>
+              </div>
+              <div class="ts-skill-item">
+                <div class="ts-skill-icon"><img src="assets/img/skills/trello.png" alt="Trello" onerror="this.parentElement.innerHTML='<span class=ts-emoji>📋</span>'"/></div>
+                <span class="ts-skill-name">Trello</span>
+              </div>
+              <div class="ts-skill-item">
+                <div class="ts-skill-icon"><img src="assets/img/skills/postman.png" alt="Postman" onerror="this.parentElement.innerHTML='<span class=ts-emoji>📮</span>'"/></div>
+                <span class="ts-skill-name">Postman</span>
+              </div>
+              <div class="ts-skill-item">
+                <div class="ts-skill-icon"><img src="assets/img/skills/git.png" alt="Git" onerror="this.parentElement.innerHTML='<span class=ts-emoji>🌿</span>'"/></div>
+                <span class="ts-skill-name">Git</span>
+              </div>
+            </div>
           </div>
 
         </div>
       </div>
-    </div>
-  </div>
+    </section>
 
-</section>
+    <!-- ── Resume ─────────────────────────────── -->
+    <section id="resume" class="resume section">
+      <div class="container section-title">
+        <h2>Work Experience</h2>
+        <p>My professional experience and industry exposure</p>
+      </div>
+      <div class="container">
+        <div class="row">
+          <div class="col">
+            <div class="main-timeline">
 
+              <div class="timeline">
+                <a href="#" class="timeline-content">
+                  <span class="timeline-year">2024</span>
+                  <div class="timeline-icon">
+                    <i class="fa fa-laptop" aria-hidden="true"></i>
+                  </div>
+                  <div class="content">
+                    <h3 class="title">Web Developer</h3>
+                    <p class="description">
+                      <strong>Krizmatic Digital Solution</strong><br>
+                      • Contributed to multiple team-based web development projects<br>
+                      • Worked on vendor record management &amp; workflow improvements<br>
+                      • Developed appointment booking features<br>
+                      • Built admin panels for government mobile applications
+                    </p>
+                  </div>
+                </a>
+              </div>
 
-<!-- /Resume Section -->
+              <div class="timeline">
+                <a href="#" class="timeline-content">
+                  <span class="timeline-year">2024</span>
+                  <div class="timeline-icon">
+                    <i class="fa fa-code" aria-hidden="true"></i>
+                  </div>
+                  <div class="content">
+                    <h3 class="title">Web Developer (Intern)</h3>
+                    <p class="description">
+                      <strong>Krizmatic Digital Solution, Lalitpur</strong><br>
+                      • Built dynamic web applications using Laravel &amp; Eloquent ORM<br>
+                      • Collaborated with the team to deliver features and fix bugs
+                    </p>
+                  </div>
+                </a>
+              </div>
 
-    <!-- Portfolio Section -->
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── Portfolio ──────────────────────────── -->
     <section id="portfolio" class="portfolio section light-background">
-
-      <!-- Section Title -->
       <div class="container section-title" data-aos="fade-up">
         <h2>My Projects</h2>
-        <p>
-          Turning ideas into real-world digital solutions.
-          This section showcases the projects I’ve built and contributed to during my professional journey, highlighting
-          clean design, efficient code, and practical problem-solving.
-        </p>
+        <p>Turning ideas into real-world digital solutions. This section showcases the projects I've built and
+          contributed to during my professional journey, highlighting clean design, efficient code, and practical
+          problem-solving.</p>
       </div>
       <div class="container">
-        <div class="isotope-layout" data-default-filter="*" data-layout="masonry" data-sort="original-order">
-          <div class="row gy-4 isotope-container" data-aos="fade-up" data-aos-delay="200">
-            <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-app">
-              <div class="portfolio-content h-100 portfolio-card">
-                <img src="assets/img/projects/ward.png" class="img-fluid portfolio-img"
-                  alt="Ward-1 Lalitpur Government Project">
-
-                <div class="portfolio-info portfolio-info-light">
-                  <h4>Ward-1 Lalitpur</h4>
-                  <p>
-                    Government project including a website, MIS, and backend API for a mobile app,
-                    developed while leading the project team.
-                  </p>
-                  <div class="tech-stack">
-                    <span>HTML</span>
-                    <span>CSS</span>
-                    <span>JavaScript</span>
-                    <span>Laravel</span>
-                    <span>Voyager</span>
-                    <span>MySQL</span>
-                  </div>
-
-                  <a href="https://ward1lmc.com/" class="details-link">
-                    <i class="bi bi-link-45deg"></i>
-                  </a>
-                </div>
-
-              </div>
-            </div>
-            <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-app">
-              <div class="portfolio-content h-100 portfolio-card">
-
-                <img src="assets/img/projects/Book-a-Hot-Air-Balloon-Ride-in-Nepal-09-25-2025_11_34_AM.png"
-                  class="img-fluid portfolio-img" alt="Balloon Nepal project">
-
-                <div class="portfolio-info portfolio-info-light">
-                  <h4>Balloon Nepal</h4>
-                  <p>
-                    Nepal’s first commercial hot air balloon company offering online booking
-                    and scenic sunrise & sunset flights in Pokhara.
-                  </p>
-                  <div class="tech-stack">
-                    <span>HTML</span>
-                    <span>CSS</span>
-                    <span>JavaScript</span>
-                    <span>Laravel</span>
-                    <span>MySQL</span>
-                  </div>
-
-                  <a href="https://balloonnepal.com/" class="details-link" target="_blank" rel="noopener">
-                    <i class="bi bi-link-45deg"></i>
-                  </a>
-                </div>
-
-              </div>
-            </div>
-
-            <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-app">
-              <div class="portfolio-content h-100 portfolio-card">
-                <img src="assets/img/projects/Education-Asia-09-25-2025_12_02_PM.png" class="img-fluid portfolio-img"
-                  alt="Education Asia">
-
-                <div class="portfolio-info portfolio-info-light">
-                  <h4>Education Aisa Consulting Website </h4>
-                  <p>
-                    Education Asia is a study abroad consulting platform where I built the Laravel backend with Voyager
-                    for admin management, handling university listings, appointment bookings, scholarships, and core
-                    consulting features.
-                  </p>
-                  <div class="tech-stack">
-                    <span>HTML</span>
-                    <span>CSS</span>
-                    <span>JavaScript</span>
-                    <span>Laravel</span>
-                    <span>Voyager</span>
-                    <span>MySQL</span>
-                  </div>
-                  <a href="https://www.educationasia.com/" class="details-link">
-                    <i class="bi bi-link-45deg"></i>
-                  </a>
-                </div>
-
-              </div>
-            </div>
-            <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-app">
-              <div class="portfolio-content h-100 portfolio-card">
-                <img src="assets/img/projects/shivatreks.png" class="img-fluid portfolio-img" alt="Education Asia">
-
-                <div class="portfolio-info portfolio-info-light">
-                  <h4>Shiva Holidays Treks And Expeditions Website </h4>
-                  <p>
-                    Shiva Treks is a travel and tourism website that showcases trekking and tour packages, detailed
-                    itineraries, destinations, and online booking features.
-                  </p>
-                  <div class="tech-stack">
-                    <span>HTML</span>
-                    <span>CSS</span>
-                    <span>JavaScript</span>
-                    <span>Laravel</span>
-                    <span>Voyager</span>
-                    <span>MySQL</span>
-                  </div>
-                  <a href="https://www.shivaholidays.com/" class="details-link">
-                    <i class="bi bi-link-45deg"></i>
-                  </a>
-                </div>
-
-              </div>
-            </div>
-             <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-app">
-              <div class="portfolio-content h-100 portfolio-card">
-                <img src="assets/img/projects/omega.png" class="img-fluid portfolio-img" alt="Omega International">
-
-                <div class="portfolio-info portfolio-info-light">
-                  <h4>Omega International Pvt Ltd</h4>
-                  <p>
-                 Omega International is a manpower recruitment platform connecting global employers with skilled Nepali professionals, featuring backend management for clients, services, blogs, CV generation, and appointment booking.
-                  </p>
-                  <div class="tech-stack">
-                    <span>HTML</span>
-                    <span>CSS</span>
-                    <span>JavaScript</span>
-                    <span>Laravel</span>
-                    <span>Voyager</span>
-                    <span>MySQL</span>
-                  </div>
-                  <a href="https://omeganepal.com/" class="details-link">
-                    <i class="bi bi-link-45deg"></i>
-                  </a>
-                </div>
-
-              </div>
-            </div>
-             <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-app">
-              <div class="portfolio-content h-100 portfolio-card">
-                <img src="assets/img/projects/bizz.png" class="img-fluid portfolio-img" alt="Bizz Education">
-
-                <div class="portfolio-info portfolio-info-light">
-                  <h4>Bizz Education</h4>
-                  <p>
-               Bizz Educational Consultancy is an education consulting website that provides expert academic guidance to students, featuring MIS and website management, appointment booking, email and contact systems, and “Apply Now” functionality to support the complete student counseling process.
-                  </p>
-                  <div class="tech-stack">
-                    <span>HTML</span>
-                    <span>CSS</span>
-                    <span>JavaScript</span>
-                    <span>Laravel</span>
-                    <span>Voyager</span>
-                    <span>MySQL</span>
-                  </div>
-                  <a href="https://bizzeducation.com/" class="details-link">
-                    <i class="bi bi-link-45deg"></i>
-                  </a>
-                </div>
-
-              </div>
-            </div>
-             <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-app">
-              <div class="portfolio-content h-100 portfolio-card">
-                <img src="assets/img/projects/TukuTukuNepal.png" class="img-fluid portfolio-img" alt="Bizz Education">
-
-                <div class="portfolio-info portfolio-info-light">
-                  <h4>TukuTuku Nepal </h4>
-                  <p>
-             Tuku Tuku Nepal is an e-commerce baby and maternity clothing platform with a custom CRM supporting order management, customer management, product and supplier management, user roles, and enquiry handling.
-                  </p>
-                  <div class="tech-stack">
-                    <span>HTML</span>
-                    <span>CSS</span>
-                    <span>JavaScript</span>
-                    <span>Laravel</span>
-                    <span>Voyager</span>
-                    <span>MySQL</span>
-                  </div>
-                  <a href="https://tukutukunepal.com/" class="details-link">
-                    <i class="bi bi-link-45deg"></i>
-                  </a>
-                </div>
-
-              </div>
-            </div>
-          </div><!-- End Portfolio Container -->
-
-        </div>
-
+        <div class="portfolio-grid" id="portfolioGrid"></div>
       </div>
-
-
-    </section><!-- /Portfolio Section -->
-
-  
+    </section>
 
   </main>
 
   <footer id="footer" class="footer position-relative light-background">
-
     <div class="container">
-     
-      <div class="credits">
-      
-
-      </div>
+      <div class="credits"></div>
     </div>
-
   </footer>
 
   <!-- Scroll Top -->
-  <a href="#" id="scroll-top" class="scroll-top d-flex align-items-center justify-content-center"><i
-      class="bi bi-arrow-up-short"></i></a>
+  <a href="#" id="scroll-top" class="scroll-top d-flex align-items-center justify-content-center">
+    <i class="bi bi-arrow-up-short"></i>
+  </a>
 
   <!-- Preloader -->
   <div id="preloader"></div>
 
-  <!-- Vendor JS Files -->
+  <!-- Portfolio Modal -->
+  <div class="pf-modal-backdrop" id="pfModalBackdrop" role="dialog" aria-modal="true" aria-labelledby="pfModalTitle">
+    <div class="pf-modal-box" id="pfModalBox">
+      <div class="pf-modal-hero">
+        <img id="pfModalImg" src="" alt="" class="pf-modal-img"/>
+        <div class="pf-modal-badge" id="pfModalBadge"></div>
+        <button class="pf-modal-close" id="pfModalClose" aria-label="Close modal">
+          <i class="bi bi-x-lg"></i>
+        </button>
+      </div>
+      <div class="pf-modal-content">
+        <div class="pf-modal-title" id="pfModalTitle"></div>
+        <p class="pf-modal-desc" id="pfModalDesc"></p>
+        <div class="pf-modal-label">Tech Stack</div>
+        <div class="pf-modal-tech" id="pfModalTech"></div>
+        <a href="#" id="pfModalLink" class="pf-modal-cta" target="_blank" rel="noopener">
+          <i class="bi bi-box-arrow-up-right"></i> Visit Live Site
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Vendor JS -->
   <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
   <script src="assets/vendor/php-email-form/validate.js"></script>
   <script src="assets/vendor/aos/aos.js"></script>
@@ -497,10 +741,154 @@
   <script src="assets/vendor/imagesloaded/imagesloaded.pkgd.min.js"></script>
   <script src="assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
   <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
-
-  <!-- Main JS File -->
   <script src="assets/js/main.js"></script>
 
-</body>
+  <!-- Portfolio Script -->
+  <script>
+    const pfProjects = [
+      {
+        title: "Ward-1 Lalitpur",
+        badge: "Government",
+        desc: "Government project including a full website, Management Information System (MIS), and backend API for a mobile app — developed while leading the entire project team. Built to modernize civic services and digitize government workflows for Ward-1, Lalitpur Metropolitan City.",
+        tech: ["HTML","CSS","JavaScript","Laravel","Voyager","MySQL"],
+        link: "https://ward1lmc.com/",
+        img: "assets/img/projects/ward.png",
+        ph: "Ward-1+Lalitpur"
+      },
+      {
+        title: "Balloon Nepal",
+        badge: "Tourism",
+        desc: "Nepal's first commercial hot air balloon company offering online booking and scenic sunrise & sunset flights in Pokhara. Includes full booking management, customer inquiry handling, and flight scheduling system.",
+        tech: ["HTML","CSS","JavaScript","Laravel","MySQL"],
+        link: "https://balloonnepal.com/",
+        img: "assets/img/projects/Book-a-Hot-Air-Balloon-Ride-in-Nepal-09-25-2025_11_34_AM.png",
+        ph: "Balloon+Nepal"
+      },
+      {
+        title: "Education Asia Consulting",
+        badge: "Education",
+        desc: "A study abroad consulting platform where I built the Laravel backend with Voyager for admin management, handling university listings, appointment bookings, scholarships, and core consulting features for students seeking opportunities abroad.",
+        tech: ["HTML","CSS","JavaScript","Laravel","Voyager","MySQL"],
+        link: "https://www.educationasia.com/",
+        img: "assets/img/projects/Education-Asia-09-25-2025_12_02_PM.png",
+        ph: "Education+Asia"
+      },
+      {
+        title: "Shiva Holidays Treks",
+        badge: "Travel",
+        desc: "A travel and tourism website showcasing trekking and tour packages, detailed itineraries, destinations, and online booking features for adventure seekers exploring Nepal's Himalayan landscapes.",
+        tech: ["HTML","CSS","JavaScript","Laravel","Voyager","MySQL"],
+        link: "https://www.shivaholidays.com/",
+        img: "assets/img/projects/shivatreks.png",
+        ph: "Shiva+Treks"
+      },
+      {
+        title: "Omega International Pvt Ltd",
+        badge: "Recruitment",
+        desc: "A manpower recruitment platform connecting global employers with skilled Nepali professionals. Features backend management for clients, services, blogs, CV generation, and appointment booking systems.",
+        tech: ["HTML","CSS","JavaScript","Laravel","Voyager","MySQL"],
+        link: "https://omeganepal.com/",
+        img: "assets/img/projects/omega.png",
+        ph: "Omega+International"
+      },
+      {
+        title: "Bizz Education",
+        badge: "Consulting",
+        desc: "An education consulting website providing expert academic guidance to students, featuring MIS and website management, appointment booking, email and contact systems, and 'Apply Now' functionality to support the complete student counseling process.",
+        tech: ["HTML","CSS","JavaScript","Laravel","Voyager","MySQL"],
+        link: "https://bizzeducation.com/",
+        img: "assets/img/projects/bizz.png",
+        ph: "Bizz+Education"
+      },
+      {
+        title: "TukuTuku Nepal",
+        badge: "E-Commerce",
+        desc: "An e-commerce baby and maternity clothing platform with a custom CRM supporting order management, customer management, product and supplier management, user roles, and enquiry handling — built for Nepali parents.",
+        tech: ["HTML","CSS","JavaScript","Laravel","Voyager","MySQL"],
+        link: "https://tukutukunepal.com/",
+        img: "assets/img/projects/TukuTukuNepal.png",
+        ph: "TukuTuku+Nepal"
+      }
+    ];
 
+    const pfGrid       = document.getElementById('portfolioGrid');
+    const pfBackdrop   = document.getElementById('pfModalBackdrop');
+    const pfModalImg   = document.getElementById('pfModalImg');
+    const pfModalBadge = document.getElementById('pfModalBadge');
+    const pfModalTitle = document.getElementById('pfModalTitle');
+    const pfModalDesc  = document.getElementById('pfModalDesc');
+    const pfModalTech  = document.getElementById('pfModalTech');
+    const pfModalLink  = document.getElementById('pfModalLink');
+    const pfModalClose = document.getElementById('pfModalClose');
+
+    pfProjects.forEach((p, i) => {
+      const card = document.createElement('div');
+      card.className = 'pf-card';
+      card.setAttribute('role', 'button');
+      card.setAttribute('tabindex', '0');
+      card.setAttribute('aria-label', `View details for ${p.title}`);
+
+      card.innerHTML = `
+        <div class="pf-img-wrap">
+          <img src="${p.img}" class="pf-img" alt="${p.title}"
+               onerror="this.src='https://placehold.co/600x200/ede9fe/7c3aed?text=${p.ph}'"/>
+          <div class="pf-overlay">
+            <div class="pf-overlay-icon"><i class="bi bi-eye"></i></div>
+            <div class="pf-overlay-text">Click to Preview</div>
+          </div>
+        </div>
+        <div class="pf-body">
+          <h4>${p.title}</h4>
+          <p>${p.desc}</p>
+          <div class="pf-tech">${p.tech.map(t => `<span>${t}</span>`).join('')}</div>
+          <div class="pf-footer-row">
+            <button class="pf-btn-details" onclick="event.stopPropagation(); pfOpenModal(${i})">
+              <i class="bi bi-info-circle"></i> Details
+            </button>
+            <a href="${p.link}" class="pf-btn-visit" target="_blank" rel="noopener" onclick="event.stopPropagation()">
+              <i class="bi bi-box-arrow-up-right"></i> Visit
+            </a>
+          </div>
+        </div>
+      `;
+
+      card.addEventListener('click', e => {
+        if (e.target.closest('.pf-btn-visit')) return;
+        pfOpenModal(i);
+      });
+      card.addEventListener('keydown', e => {
+        if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); pfOpenModal(i); }
+      });
+
+      pfGrid.appendChild(card);
+    });
+
+    window.pfOpenModal = function(idx) {
+      const p = pfProjects[idx];
+      pfModalImg.src = p.img;
+      pfModalImg.onerror = () => pfModalImg.src = `https://placehold.co/660x300/ede9fe/7c3aed?text=${p.ph}`;
+      pfModalImg.alt     = p.title;
+      pfModalBadge.textContent = p.badge;
+      pfModalTitle.textContent = p.title;
+      pfModalDesc.textContent  = p.desc;
+      pfModalTech.innerHTML    = p.tech.map(t => `<span>${t}</span>`).join('');
+      pfModalLink.href         = p.link;
+
+      pfBackdrop.classList.add('open');
+      document.body.style.overflow = 'hidden';
+      document.getElementById('pfModalBox').scrollTop = 0;
+      setTimeout(() => pfModalClose.focus(), 120);
+    };
+
+    function pfCloseModal() {
+      pfBackdrop.classList.remove('open');
+      document.body.style.overflow = '';
+    }
+
+    pfModalClose.addEventListener('click', pfCloseModal);
+    pfBackdrop.addEventListener('click', e => { if (e.target === pfBackdrop) pfCloseModal(); });
+    document.addEventListener('keydown', e => { if (e.key === 'Escape') pfCloseModal(); });
+  </script>
+
+</body>
 </html>
