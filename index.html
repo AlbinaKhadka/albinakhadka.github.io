@@ -1,21 +1,18 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
-  <title>Albina Khadka — Full Stack Developer</title>
-  <meta content="Full Stack Web Developer Portfolio - Laravel, PHP, JavaScript" name="description">
+  <title>Albina Khadka | Full Stack Developer</title>
+  <meta content="Full Stack Developer Portfolio - Laravel, PHP, JavaScript" name="description">
 
-  <!-- Favicons -->
   <link href="assets/img/resume.png" rel="icon">
   <link href="assets/img/resume.png" rel="apple-touch-icon">
 
   <!-- Fonts -->
   <link href="https://fonts.googleapis.com" rel="preconnect">
   <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&family=Poppins:wght@300;400;500;600;700;800&family=Raleway:wght@300;400;500;600;700&family=Sora:wght@400;600;700;800&family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,600&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&family=Raleway:wght@300;400;500;600;700&family=Sora:wght@400;600;700;800&family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,600&display=swap" rel="stylesheet">
 
   <!-- Vendor CSS -->
   <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
@@ -25,432 +22,23 @@
   <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
   <link href="assets/css/main.css" rel="stylesheet">
 
-  <style>
-    /* ════════════════════════════════════════
-       SHARED VARIABLES
-    ════════════════════════════════════════ */
-    :root {
-      --accent:       #7c3aed;
-      --accent-hover: #6d28d9;
-      --accent-light: #ede9fe;
-      --text-dark:    #111827;
-      --text-mid:     #4b5563;
-      --text-light:   #6b7280;
-      --border:       #e5e7eb;
-      --white:        #ffffff;
-    }
-
-    /* ════════════════════════════════════════
-       TECH STACK SECTION
-    ════════════════════════════════════════ */
-    .skills.section { padding: 80px 0 90px; }
-
-    .ts-title-wrap { text-align: center; margin-bottom: 56px; }
-
-    .ts-heading {
-      font-family: 'Sora', sans-serif;
-      font-size: clamp(26px, 3.5vw, 38px);
-      font-weight: 800;
-      color: var(--text-dark);
-      margin-bottom: 12px;
-      letter-spacing: -0.4px;
-    }
-
-    .ts-title-line {
-      width: 52px; height: 4px;
-      border-radius: 2px;
-      background: linear-gradient(90deg, #7c3aed, #a78bfa);
-      margin: 0 auto 14px;
-    }
-
-    .ts-subtitle {
-      font-size: 15px; color: var(--text-light);
-      max-width: 460px; margin: 0 auto; line-height: 1.7;
-    }
-
-    .ts-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 28px;
-    }
-    @media (max-width: 991px) { .ts-grid { grid-template-columns: repeat(2,1fr); } }
-    @media (max-width: 575px)  { .ts-grid { grid-template-columns: 1fr; } }
-
-    .ts-category {
-      border-radius: 24px;
-      padding: 32px 26px 28px;
-      position: relative;
-      overflow: hidden;
-      transition: transform 0.32s cubic-bezier(.34,1.56,.64,1), box-shadow 0.3s ease;
-    }
-    .ts-category:hover { transform: translateY(-7px); }
-
-    .ts-frontend {
-      background: linear-gradient(145deg, #eff6ff 0%, #e0e7ff 100%);
-      box-shadow: 0 12px 36px rgba(59,130,246,0.13);
-    }
-    .ts-backend {
-      background: linear-gradient(145deg, #faf5ff 0%, #ede9fe 100%);
-      box-shadow: 0 12px 36px rgba(124,58,237,0.13);
-    }
-    .ts-tools {
-      background: linear-gradient(145deg, #f0fdf4 0%, #d1fae5 100%);
-      box-shadow: 0 12px 36px rgba(16,185,129,0.13);
-    }
-
-    .ts-category::before {
-      content: '';
-      position: absolute;
-      top: -40px; right: -40px;
-      width: 130px; height: 130px;
-      border-radius: 50%;
-      opacity: 0.18;
-    }
-    .ts-frontend::before { background: #3b82f6; }
-    .ts-backend::before  { background: #7c3aed; }
-    .ts-tools::before    { background: #10b981; }
-
-    .ts-cat-header {
-      display: flex; align-items: center;
-      gap: 14px; margin-bottom: 26px;
-    }
-
-    .ts-cat-icon {
-      width: 50px; height: 50px;
-      border-radius: 14px;
-      display: flex; align-items: center; justify-content: center;
-      font-size: 22px; flex-shrink: 0;
-    }
-    .ts-icon-fe    { background: #3b82f6; color: #fff; box-shadow: 0 6px 18px rgba(59,130,246,0.35); }
-    .ts-icon-be    { background: #7c3aed; color: #fff; box-shadow: 0 6px 18px rgba(124,58,237,0.35); }
-    .ts-icon-tools { background: #10b981; color: #fff; box-shadow: 0 6px 18px rgba(16,185,129,0.35); }
-
-    .ts-cat-label {
-      font-family: 'Sora', sans-serif;
-      font-size: 18px; font-weight: 800;
-      color: var(--text-dark); line-height: 1.2;
-    }
-    .ts-cat-desc { font-size: 12px; color: var(--text-light); margin-top: 3px; font-weight: 500; }
-
-    .ts-skills-list {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 12px;
-    }
-
-    .ts-skill-item {
-      display: flex;
-      align-items: center;
-      gap: 8px;
-      background: rgba(255,255,255,0.75);
-      backdrop-filter: blur(6px);
-      border-radius: 12px;
-      padding: 10px 14px;
-      border: 1px solid rgba(255,255,255,0.9);
-      box-shadow: 0 2px 8px rgba(0,0,0,0.06);
-      transition: transform 0.22s ease, box-shadow 0.22s ease, background 0.22s ease;
-      cursor: default;
-      animation: tsBadgeIn 0.4s ease both;
-    }
-    .ts-skill-item:hover {
-      transform: scale(1.07);
-      background: rgba(255,255,255,0.95);
-      box-shadow: 0 6px 18px rgba(0,0,0,0.1);
-    }
-
-    .ts-skill-icon {
-      width: 30px; height: 30px;
-      display: flex; align-items: center; justify-content: center;
-      flex-shrink: 0;
-    }
-    .ts-skill-icon img { width: 28px; height: 28px; object-fit: contain; }
-    .ts-emoji { font-size: 20px; line-height: 1; }
-
-    .ts-skill-name {
-      font-size: 13px; font-weight: 700;
-      color: #1f2937;
-      font-family: 'DM Sans', 'Poppins', sans-serif;
-      white-space: nowrap;
-    }
-
-    .ts-frontend .ts-skill-item:nth-child(1){animation-delay:.10s}
-    .ts-frontend .ts-skill-item:nth-child(2){animation-delay:.17s}
-    .ts-frontend .ts-skill-item:nth-child(3){animation-delay:.24s}
-    .ts-frontend .ts-skill-item:nth-child(4){animation-delay:.31s}
-    .ts-backend  .ts-skill-item:nth-child(1){animation-delay:.15s}
-    .ts-backend  .ts-skill-item:nth-child(2){animation-delay:.22s}
-    .ts-backend  .ts-skill-item:nth-child(3){animation-delay:.29s}
-    .ts-backend  .ts-skill-item:nth-child(4){animation-delay:.36s}
-    .ts-tools    .ts-skill-item:nth-child(1){animation-delay:.20s}
-    .ts-tools    .ts-skill-item:nth-child(2){animation-delay:.27s}
-    .ts-tools    .ts-skill-item:nth-child(3){animation-delay:.34s}
-    .ts-tools    .ts-skill-item:nth-child(4){animation-delay:.41s}
-
-    @keyframes tsBadgeIn {
-      from { opacity: 0; transform: scale(0.8) translateY(8px); }
-      to   { opacity: 1; transform: scale(1) translateY(0); }
-    }
-
-    /* ════════════════════════════════════════
-       PORTFOLIO SECTION
-    ════════════════════════════════════════ */
-    .portfolio-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 28px;
-    }
-    @media (max-width: 991px) { .portfolio-grid { grid-template-columns: repeat(2,1fr); gap: 20px; } }
-    @media (max-width: 575px)  { .portfolio-grid { grid-template-columns: 1fr; gap: 16px; } }
-
-    .pf-card {
-      background: var(--white);
-      border-radius: 20px;
-      overflow: hidden;
-      border: 1px solid var(--border);
-      box-shadow: 0 8px 28px rgba(124,58,237,0.07);
-      transition: transform 0.35s cubic-bezier(.34,1.56,.64,1), box-shadow 0.35s ease;
-      cursor: pointer;
-      display: flex;
-      flex-direction: column;
-      height: 100%;
-      animation: pfFadeUp 0.55s ease both;
-    }
-    .pf-card:hover {
-      transform: translateY(-8px) scale(1.015);
-      box-shadow: 0 28px 52px rgba(124,58,237,0.18);
-    }
-    .pf-card:active { transform: translateY(-3px) scale(0.99); }
-
-    .pf-card:nth-child(1){animation-delay:.05s}
-    .pf-card:nth-child(2){animation-delay:.12s}
-    .pf-card:nth-child(3){animation-delay:.19s}
-    .pf-card:nth-child(4){animation-delay:.26s}
-    .pf-card:nth-child(5){animation-delay:.33s}
-    .pf-card:nth-child(6){animation-delay:.40s}
-    .pf-card:nth-child(7){animation-delay:.47s}
-
-    @keyframes pfFadeUp {
-      from { opacity:0; transform: translateY(30px); }
-      to   { opacity:1; transform: translateY(0); }
-    }
-
-    .pf-img-wrap { position: relative; overflow: hidden; flex-shrink: 0; }
-
-    .pf-img {
-      width: 100%; height: 200px;
-      object-fit: cover; display: block;
-      transition: transform 0.5s ease;
-    }
-    .pf-card:hover .pf-img { transform: scale(1.08); }
-
-    .pf-overlay {
-      position: absolute; inset: 0;
-      background: linear-gradient(160deg, rgba(109,40,217,0.88), rgba(124,58,237,0.72));
-      display: flex; flex-direction: column;
-      align-items: center; justify-content: center; gap: 10px;
-      opacity: 0;
-      transition: opacity 0.3s ease;
-    }
-    .pf-card:hover .pf-overlay { opacity: 1; }
-
-    .pf-overlay-icon {
-      width: 54px; height: 54px; border-radius: 50%;
-      background: rgba(255,255,255,0.18);
-      border: 2px solid rgba(255,255,255,0.55);
-      display: flex; align-items: center; justify-content: center;
-      color: #fff; font-size: 22px;
-      transform: scale(0.65);
-      transition: transform 0.35s cubic-bezier(.34,1.56,.64,1) .05s;
-    }
-    .pf-card:hover .pf-overlay-icon { transform: scale(1); }
-
-    .pf-overlay-text {
-      color: #fff;
-      font-family: 'Sora', sans-serif;
-      font-size: 13px; font-weight: 600; letter-spacing: 0.5px;
-      transform: translateY(10px); opacity: 0;
-      transition: transform 0.3s ease 0.1s, opacity 0.3s ease 0.1s;
-    }
-    .pf-card:hover .pf-overlay-text { transform: translateY(0); opacity: 1; }
-
-    .pf-body { padding: 22px; display: flex; flex-direction: column; flex: 1; }
-
-    .pf-body h4 {
-      font-family: 'Sora', sans-serif;
-      font-size: 16px; font-weight: 700;
-      color: var(--text-dark); margin-bottom: 8px; line-height: 1.35;
-    }
-
-    .pf-body p {
-      font-size: 13.5px; line-height: 1.65;
-      color: var(--text-mid); margin-bottom: 14px; flex: 1;
-      display: -webkit-box;
-      -webkit-line-clamp: 3;
-      -webkit-box-orient: vertical;
-      overflow: hidden;
-    }
-
-    .pf-tech { display: flex; flex-wrap: wrap; gap: 6px; margin-bottom: 18px; }
-    .pf-tech span {
-      font-size: 11px; font-weight: 600;
-      padding: 3px 10px; border-radius: 999px;
-      background: var(--accent-light); color: var(--accent);
-      border: 1px solid #ddd6fe;
-    }
-
-    .pf-footer-row {
-      display: flex; align-items: center;
-      justify-content: space-between; gap: 10px;
-      margin-top: auto;
-    }
-
-    .pf-btn-details {
-      display: inline-flex; align-items: center; gap: 5px;
-      font-size: 13px; font-weight: 600;
-      padding: 7px 14px; border-radius: 10px;
-      background: transparent; color: var(--accent);
-      border: 1.5px solid var(--accent); cursor: pointer;
-      transition: background 0.2s ease;
-      font-family: 'DM Sans', 'Poppins', sans-serif;
-    }
-    .pf-btn-details:hover { background: var(--accent-light); }
-
-    .pf-btn-visit {
-      display: inline-flex; align-items: center; gap: 6px;
-      font-size: 13px; font-weight: 600;
-      padding: 7px 16px; border-radius: 10px;
-      background: var(--accent); color: #fff;
-      text-decoration: none; border: none; cursor: pointer;
-      transition: background 0.25s ease, transform 0.2s ease;
-    }
-    .pf-btn-visit:hover { background: var(--accent-hover); transform: scale(1.04); color: #fff; }
-
-    /* ════════════════════════════════════════
-       PORTFOLIO MODAL
-    ════════════════════════════════════════ */
-    .pf-modal-backdrop {
-      position: fixed; inset: 0;
-      background: rgba(17,24,39,0.65);
-      backdrop-filter: blur(8px);
-      z-index: 9999;
-      display: flex; align-items: center; justify-content: center;
-      padding: 20px;
-      opacity: 0; pointer-events: none;
-      transition: opacity 0.3s ease;
-    }
-    .pf-modal-backdrop.open { opacity: 1; pointer-events: all; }
-
-    .pf-modal-box {
-      background: var(--white);
-      border-radius: 24px;
-      max-width: 660px; width: 100%;
-      box-shadow: 0 40px 90px rgba(0,0,0,0.25);
-      transform: scale(0.86) translateY(28px);
-      transition: transform 0.38s cubic-bezier(.34,1.4,.64,1), opacity 0.3s ease;
-      opacity: 0;
-      max-height: 90vh; overflow-y: auto;
-      scrollbar-width: thin; scrollbar-color: #d1d5db transparent;
-    }
-    .pf-modal-box::-webkit-scrollbar { width: 5px; }
-    .pf-modal-box::-webkit-scrollbar-thumb { background: #d1d5db; border-radius: 10px; }
-    .pf-modal-backdrop.open .pf-modal-box { transform: scale(1) translateY(0); opacity: 1; }
-
-    .pf-modal-hero { position: relative; }
-
-    .pf-modal-img {
-      width: 100%; height: 300px;
-      object-fit: cover; object-position: top center;
-      display: block;
-    }
-
-    /* Close button — floated over image top-right */
-    .pf-modal-close {
-      position: absolute; top: 12px; right: 12px;
-      width: 36px; height: 36px; border-radius: 50%;
-      background: rgba(255,255,255,0.92);
-      backdrop-filter: blur(4px);
-      border: none; cursor: pointer;
-      display: flex; align-items: center; justify-content: center;
-      font-size: 17px; color: #111827;
-      box-shadow: 0 2px 10px rgba(0,0,0,0.15);
-      transition: background 0.2s, color 0.2s, transform 0.2s;
-      z-index: 10;
-    }
-    .pf-modal-close:hover { background: #fee2e2; color: #dc2626; transform: scale(1.1); }
-
-    .pf-modal-badge {
-      position: absolute; bottom: 14px; left: 18px;
-      background: rgba(255,255,255,0.92);
-      backdrop-filter: blur(4px);
-      padding: 5px 14px; border-radius: 999px;
-      font-family: 'Sora', sans-serif;
-      font-size: 12px; font-weight: 700; color: var(--accent);
-      border: 1px solid #ddd6fe;
-    }
-
-    .pf-modal-content { padding: 28px 30px 30px; }
-
-    .pf-modal-title {
-      font-family: 'Sora', sans-serif;
-      font-size: clamp(18px,3vw,22px);
-      font-weight: 800; color: var(--text-dark);
-      line-height: 1.3; margin-bottom: 12px;
-    }
-
-    .pf-modal-desc {
-      font-size: 14.5px; color: var(--text-mid);
-      line-height: 1.78; margin-bottom: 22px;
-    }
-
-    .pf-modal-label {
-      font-family: 'Sora', sans-serif;
-      font-size: 10.5px; font-weight: 700;
-      letter-spacing: 1.2px; text-transform: uppercase;
-      color: var(--text-light); margin-bottom: 10px;
-    }
-
-    .pf-modal-tech { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 28px; }
-    .pf-modal-tech span {
-      font-size: 12px; font-weight: 600;
-      padding: 5px 14px; border-radius: 999px;
-      background: var(--accent-light); color: var(--accent);
-      border: 1px solid #ddd6fe;
-    }
-
-    .pf-modal-cta {
-      display: inline-flex; align-items: center; gap: 8px;
-      font-size: 14px; font-weight: 700;
-      padding: 12px 26px; border-radius: 12px;
-      background: var(--accent); color: #fff;
-      text-decoration: none;
-      transition: background 0.25s, transform 0.2s;
-    }
-    .pf-modal-cta:hover { background: var(--accent-hover); transform: scale(1.03); color: #fff; }
-
-    @media (max-width: 480px) {
-      .pf-modal-img { height: 220px; }
-      .pf-modal-content { padding: 20px; }
-      .pf-footer-row { flex-wrap: wrap; }
-      .pf-btn-details, .pf-btn-visit { flex: 1; justify-content: center; }
-    }
-  </style>
+  
 </head>
 
 <body class="index-page">
 
+  <!-- ── HEADER ─────────────────────────────── -->
   <header id="header" class="header dark-background d-flex flex-column">
     <i class="header-toggle d-xl-none bi bi-list"></i>
 
-    <div class="profile-img">
-      <img src="assets/img/me.png" alt="" class="img-fluid rounded-circle">
-    </div>
+    <div class="profile-img"></div>
 
     <a href="index.html" class="logo d-flex align-items-center justify-content-center">
       <h1 class="sitename">ALBINA KHADKA</h1>
     </a>
 
     <div class="social-links text-center">
-      <a href="mailto:khadkaalbina64@gmail.com" class="gmail" target="_blank">
+      <a href="mailto:albina.khadkaoo6@gmail.com" class="gmail" target="_blank">
         <i class="bi bi-envelope-fill"></i>
       </a>
       <a href="https://github.com/AlbinaKhadka" class="github" target="_blank">
@@ -466,67 +54,154 @@
         <li><a href="#hero" class="active"><i class="bi bi-house navicon"></i> Home</a></li>
         <li><a href="#about"><i class="bi bi-person navicon"></i> About</a></li>
         <li><a href="#skills"><i class="bi bi-stack navicon"></i> Tech Stack</a></li>
-        <li><a href="#resume"><i class="bi bi-file-earmark-text navicon"></i> Resume</a></li>
+        <li><a href="#resume"><i class="bi bi-file-earmark-text navicon"></i> Experience</a></li>
         <li><a href="#portfolio"><i class="bi bi-images navicon"></i> Projects</a></li>
-        <li><a href="#services"><i class="bi bi-hdd-stack navicon"></i> Services</a></li>
+        <li><a href="#contact"><i class="bi bi-envelope navicon"></i> Contact</a></li>
+        <li><a href="#services"><i class="bi bi-hdd-stack navicon"></i> Resume</a></li>
       </ul>
     </nav>
   </header>
 
   <main class="main">
 
-    <!-- ── Hero ──────────────────────────────── -->
+    <!-- ── HERO ──────────────────────────────── -->
     <section id="hero" class="hero section dark-background">
-      <img src="assets/img/me.png" alt="" data-aos="fade-in">
+      <!-- <img src="assets/img/me.png" alt="Albina Khadka" data-aos="fade-in"> -->
+
       <div class="container" data-aos="fade-up" data-aos-delay="100">
-        <h2>ALBINA KHADKA</h2>
-        <p>I'm <span class="typed" data-typed-items="Full Stack Developer"></span>
+        <!-- <div class="hero-badge">
+          <span class="dot"></span>
+          Available for work
+        </div> -->
+
+        <h2>
+          Hi, I'm<br>
+          <span class="highlight">ALBINA KHADKA</span>
+        </h2>
+
+        <p>
+          I'm a&nbsp;
+          <span class="typed" data-typed-items="Full Stack Developer,Laravel Expert,PHP Developer,Web Architect"></span>
           <span class="typed-cursor typed-cursor--blink" aria-hidden="true"></span>
         </p>
+
+        <div class="hero-cta-group">
+          <a href="#portfolio" class="hero-btn-primary">
+            <i class="bi bi-grid"></i> View Projects
+          </a>
+          <a href="#contact" class="hero-btn-ghost">
+            <i class="bi bi-chat-dots"></i> Let's Talk
+          </a>
+        </div>
       </div>
+
+      <!-- <div class="hero-scroll-hint">
+        <span>Scroll</span>
+        <div class="scroll-line"></div>
+      </div> -->
     </section>
 
-    <!-- ── About ─────────────────────────────── -->
-    <section id="about" class="about section">
-      <div class="container section-title" data-aos="fade-up">
-        <h2>About</h2>
-        <p>Web Developer with 1.5+ years of experience in Laravel, PHP, JavaScript, HTML, and CSS. Skilled in clean
-          coding, REST API integration, debugging, and delivering high-performance solutions.</p>
-      </div>
-      <div class="container" data-aos="fade-up" data-aos-delay="100">
-        <div class="row gy-4 justify-content-center">
-          <div class="col-lg-4">
-            <img src="assets/img/me.png" class="img-fluid" alt="">
-          </div>
-          <div class="col-lg-8 content">
-            <h2>Web Developer</h2>
-            <p class="fst-italic py-3">
-              Web Developer with 1.5+ years of experience in Laravel, PHP, JavaScript, HTML, and CSS.
-              Skilled in clean coding, REST API integration, debugging, and delivering high-performance solutions.
-            </p>
-            <div class="row">
-              <div class="col-lg-6">
-                <ul>
-                  <li><i class="bi bi-chevron-right"></i> <strong>City:</strong> <span>Lalitpur, Nepal</span></li>
-                </ul>
+    <!-- ── ABOUT ──────────────────────────────── -->
+    <section id="about" class="about-section">
+      <div class="container">
+        <div class="section-title" data-aos="fade-up">
+          <span style="display:inline-block;font-size:0.75rem;font-weight:700;letter-spacing:0.12em;text-transform:uppercase;color:#149ddd;margin-bottom:10px;">Who I Am</span>
+          <h2>About Me</h2>
+          <!-- <p>Crafting clean, performant web experiences with a passion for thoughtful engineering.</p> -->
+        </div>
+
+        <div class="about-inner" data-aos="fade-up" data-aos-delay="100">
+
+          <!-- Left: ID Card -->
+          <div class="about-id-card">
+            <div class="about-avatar-ring">
+              <i class="bi bi-person-fill"></i>
+            </div>
+
+            <div class="about-id-name">Albina Khadka</div>
+            <div class="about-id-role">Full Stack Developer</div>
+            <div class="about-id-divider"></div>
+
+            <div class="about-id-facts">
+              <div class="about-id-fact">
+                <div class="fact-icon"><i class="bi bi-geo-alt-fill"></i></div>
+                <div class="fact-info">
+                  <span class="fact-label">Location</span>
+                  <span class="fact-value">Lalitpur, Nepal</span>
+                </div>
               </div>
-              <div class="col-lg-6">
-                <ul>
-                  <li><i class="bi bi-chevron-right"></i> <strong>Degree:</strong> <span>Bachelor</span></li>
-                  <li><i class="bi bi-chevron-right"></i> <strong>Email:</strong> <span>khadkaalbina64@gmail.com</span></li>
-                  <li><i class="bi bi-chevron-right"></i> <strong>Freelance:</strong> <span>Available</span></li>
-                </ul>
+              <div class="about-id-fact">
+                <div class="fact-icon"><i class="bi bi-envelope-fill"></i></div>
+                <div class="fact-info">
+                  <span class="fact-label">Email</span>
+                  <span class="fact-value"><a href="mailto:albina.khadkaoo6@gmail.com">albina.khadkaoo6@gmail.com</a></span>
+                </div>
+              </div>
+              <div class="about-id-fact">
+                <div class="fact-icon"><i class="bi bi-mortarboard-fill"></i></div>
+                <div class="fact-info">
+                  <span class="fact-label">Education</span>
+                  <span class="fact-value">Bachelor's Degree</span>
+                </div>
+              </div>
+              <div class="about-id-fact">
+                <div class="fact-icon"><i class="bi bi-briefcase-fill"></i></div>
+                <div class="fact-info">
+                  <span class="fact-label">Status</span>
+                  <span class="fact-value">Available for Freelance</span>
+                </div>
               </div>
             </div>
           </div>
+
+          <!-- Right: Content -->
+          <div class="about-content">
+            <!-- <div class="about-tag">
+              <span class="blink"></span>
+              Open to opportunities
+            </div> -->
+
+            <!-- <h3 class="about-headline">
+              Building the web,<br>
+              <em>one clean commit</em> at a time.
+            </h3> -->
+
+            <p class="about-bio">
+            I’m a Web Developer based in Lalitpur, Nepal, with practical experience in Laravel, PHP, JavaScript, HTML, CSS, Tailwind CSS, Vue.js, and React. I enjoy building scalable and efficient web applications with clean, maintainable code. My focus is on creating reliable digital solutions with strong architecture and good user experience. I’m passionate about learning new technologies and continuously improving my development skills to deliver better products.
+            </p>
+
+            <div class="about-stats-row">
+              <div class="about-stat-box">
+                <div class="stat-num">7+</div>
+                <div class="stat-lbl">Projects</div>
+              </div>
+              <div class="about-stat-box">
+                <div class="stat-num">3</div>
+                <div class="stat-lbl">Companies</div>
+              </div>
+              <div class="about-stat-box">
+                <div class="stat-num">10+</div>
+                <div class="stat-lbl">Technologies</div>
+              </div>
+              <div class="about-stat-box">
+                <div class="stat-num">2+</div>
+                <div class="stat-lbl">Years Exp.</div>
+              </div>
+            </div>
+
+            <div class="about-availability">
+              <div class="availability-dot"></div>
+              Currently available for freelance opportunities
+            </div>
+          </div>
+
         </div>
       </div>
     </section>
 
-    <!-- ── Tech Stack ─────────────────────────── -->
+    <!-- ── TECH STACK ─────────────────────────── -->
     <section id="skills" class="skills section light-background">
       <div class="container">
-
         <div class="ts-title-wrap" data-aos="fade-up">
           <h2 class="ts-heading">Tech Stack</h2>
           <div class="ts-title-line"></div>
@@ -546,19 +221,27 @@
             </div>
             <div class="ts-skills-list">
               <div class="ts-skill-item">
-                <div class="ts-skill-icon"><img src="assets/img/skills/html.png" alt="HTML" onerror="this.parentElement.innerHTML='<span class=ts-emoji>🌐</span>'"/></div>
+                <div class="ts-skill-icon"><img src="assets/img/skills/html.png" alt="HTML" onerror="this.parentElement.innerHTML='<span class=ts-emoji>🌐</span>'" /></div>
                 <span class="ts-skill-name">HTML5</span>
               </div>
               <div class="ts-skill-item">
-                <div class="ts-skill-icon"><img src="assets/img/skills/css.png" alt="CSS" onerror="this.parentElement.innerHTML='<span class=ts-emoji>🎨</span>'"/></div>
-                <span class="ts-skill-name">CSS3</span>
+                <div class="ts-skill-icon"><img src="assets/img/skills/css.png" alt="CSS" onerror="this.parentElement.innerHTML='<span class=ts-emoji>🎨</span>'" /></div>
+                <span class="ts-skill-name">CSS</span>
               </div>
               <div class="ts-skill-item">
-                <div class="ts-skill-icon"><img src="assets/img/skills/js.png" alt="JavaScript" onerror="this.parentElement.innerHTML='<span class=ts-emoji>⚡</span>'"/></div>
+                <div class="ts-skill-icon"><img src="assets/img/skills/tailwind.jpg" alt="Tailwind CSS" onerror="this.parentElement.innerHTML='<span class=ts-emoji>🌊</span>'" /></div>
+                <span class="ts-skill-name">Tailwind</span>
+              </div>
+              <div class="ts-skill-item">
+                <div class="ts-skill-icon"><img src="assets/img/skills/js.png" alt="JavaScript" onerror="this.parentElement.innerHTML='<span class=ts-emoji>⚡</span>'" /></div>
                 <span class="ts-skill-name">JavaScript</span>
               </div>
               <div class="ts-skill-item">
-                <div class="ts-skill-icon"><img src="assets/img/skills/bootstrap.png" alt="Bootstrap" onerror="this.parentElement.innerHTML='<span class=ts-emoji>🅱</span>'"/></div>
+                <div class="ts-skill-icon"><img src="assets/img/skills/document.png" alt="Vue.js" onerror="this.parentElement.innerHTML='<span class=ts-emoji>💚</span>'" /></div>
+                <span class="ts-skill-name">Vue Js</span>
+              </div>
+              <div class="ts-skill-item">
+                <div class="ts-skill-icon"><img src="assets/img/skills/bootstrap.png" alt="Bootstrap" onerror="this.parentElement.innerHTML='<span class=ts-emoji>🅱</span>'" /></div>
                 <span class="ts-skill-name">Bootstrap</span>
               </div>
             </div>
@@ -575,19 +258,19 @@
             </div>
             <div class="ts-skills-list">
               <div class="ts-skill-item">
-                <div class="ts-skill-icon"><img src="assets/img/skills/php.png" alt="PHP" onerror="this.parentElement.innerHTML='<span class=ts-emoji>🐘</span>'"/></div>
+                <div class="ts-skill-icon"><img src="assets/img/skills/php.png" alt="PHP" onerror="this.parentElement.innerHTML='<span class=ts-emoji>🐘</span>'" /></div>
                 <span class="ts-skill-name">PHP</span>
               </div>
               <div class="ts-skill-item">
-                <div class="ts-skill-icon"><img src="assets/img/skills/laravel.png" alt="Laravel" onerror="this.parentElement.innerHTML='<span class=ts-emoji>🔴</span>'"/></div>
+                <div class="ts-skill-icon"><img src="assets/img/skills/laravel.png" alt="Laravel" onerror="this.parentElement.innerHTML='<span class=ts-emoji>🔴</span>'" /></div>
                 <span class="ts-skill-name">Laravel</span>
               </div>
               <div class="ts-skill-item">
-                <div class="ts-skill-icon"><img src="assets/img/skills/mysql.png" alt="MySQL" onerror="this.parentElement.innerHTML='<span class=ts-emoji>🗄️</span>'"/></div>
+                <div class="ts-skill-icon"><img src="assets/img/skills/mysql.png" alt="MySQL" onerror="this.parentElement.innerHTML='<span class=ts-emoji>🗄️</span>'" /></div>
                 <span class="ts-skill-name">MySQL</span>
               </div>
               <div class="ts-skill-item">
-                <div class="ts-skill-icon"><img src="assets/img/skills/voyager.png" alt="Voyager" onerror="this.parentElement.innerHTML='<span class=ts-emoji>🚀</span>'"/></div>
+                <div class="ts-skill-icon"><img src="assets/img/skills/voyager.png" alt="Voyager" onerror="this.parentElement.innerHTML='<span class=ts-emoji>🚀</span>'" /></div>
                 <span class="ts-skill-name">Voyager</span>
               </div>
             </div>
@@ -604,20 +287,24 @@
             </div>
             <div class="ts-skills-list">
               <div class="ts-skill-item">
-                <div class="ts-skill-icon"><img src="assets/img/skills/gitlab.png" alt="GitLab" onerror="this.parentElement.innerHTML='<span class=ts-emoji>🦊</span>'"/></div>
+                <div class="ts-skill-icon"><img src="assets/img/skills/gitlab.png" alt="GitLab" onerror="this.parentElement.innerHTML='<span class=ts-emoji>🦊</span>'" /></div>
                 <span class="ts-skill-name">GitLab</span>
               </div>
               <div class="ts-skill-item">
-                <div class="ts-skill-icon"><img src="assets/img/skills/trello.png" alt="Trello" onerror="this.parentElement.innerHTML='<span class=ts-emoji>📋</span>'"/></div>
+                <div class="ts-skill-icon"><img src="assets/img/skills/trello.png" alt="Trello" onerror="this.parentElement.innerHTML='<span class=ts-emoji>📋</span>'" /></div>
                 <span class="ts-skill-name">Trello</span>
               </div>
               <div class="ts-skill-item">
-                <div class="ts-skill-icon"><img src="assets/img/skills/postman.png" alt="Postman" onerror="this.parentElement.innerHTML='<span class=ts-emoji>📮</span>'"/></div>
+                <div class="ts-skill-icon"><img src="assets/img/skills/images.jpg" alt="Postman" onerror="this.parentElement.innerHTML='<span class=ts-emoji>📮</span>'" /></div>
                 <span class="ts-skill-name">Postman</span>
               </div>
               <div class="ts-skill-item">
-                <div class="ts-skill-icon"><img src="assets/img/skills/git.png" alt="Git" onerror="this.parentElement.innerHTML='<span class=ts-emoji>🌿</span>'"/></div>
+                <div class="ts-skill-icon"><img src="assets/img/skills/git.png" alt="Git" onerror="this.parentElement.innerHTML='<span class=ts-emoji>🌿</span>'" /></div>
                 <span class="ts-skill-name">Git</span>
+              </div>
+              <div class="ts-skill-item">
+                <div class="ts-skill-icon"><img src="assets/img/skills/docker.png" alt="Docker" onerror="this.parentElement.innerHTML='<span class=ts-emoji>🐳</span>'" /></div>
+                <span class="ts-skill-name">Docker</span>
               </div>
             </div>
           </div>
@@ -626,7 +313,7 @@
       </div>
     </section>
 
-    <!-- ── Resume ─────────────────────────────── -->
+    <!-- ── RESUME ─────────────────────────────── -->
     <section id="resume" class="resume section">
       <div class="container section-title">
         <h2>Work Experience</h2>
@@ -636,50 +323,54 @@
         <div class="row">
           <div class="col">
             <div class="main-timeline">
-
               <div class="timeline">
                 <a href="#" class="timeline-content">
-                  <span class="timeline-year">2024</span>
-                  <div class="timeline-icon">
-                    <i class="fa fa-laptop" aria-hidden="true"></i>
+                  <span class="timeline-year">2026</span>
+                  <div class="content">
+                    <h3 class="title">Laravel Developer</h3>
+                    <p class="description">
+                      <strong>Krizmatic Digital Solution</strong><br><br>
+                      Contributed to multiple team-based web development projects, worked on vendor record management
+                      and workflow improvements, developed appointment booking features, and built admin panels for
+                      government mobile applications.
+                    </p>
                   </div>
+                </a>
+              </div>
+              <div class="timeline">
+                <a href="#" class="timeline-content">
+                  <span class="timeline-year">2025</span>
                   <div class="content">
                     <h3 class="title">Web Developer</h3>
                     <p class="description">
-                      <strong>Krizmatic Digital Solution</strong><br>
-                      • Contributed to multiple team-based web development projects<br>
-                      • Worked on vendor record management &amp; workflow improvements<br>
-                      • Developed appointment booking features<br>
-                      • Built admin panels for government mobile applications
+                      <strong>Krizmatic Digital Solution</strong><br><br>
+                      Contributed to multiple team-based web development projects, worked on vendor record management
+                      and workflow improvements, developed appointment booking features, and built admin panels for
+                      government mobile applications.
                     </p>
                   </div>
                 </a>
               </div>
-
               <div class="timeline">
                 <a href="#" class="timeline-content">
                   <span class="timeline-year">2024</span>
-                  <div class="timeline-icon">
-                    <i class="fa fa-code" aria-hidden="true"></i>
-                  </div>
                   <div class="content">
-                    <h3 class="title">Web Developer (Intern)</h3>
+                    <h3 class="title">Web Developer (Internship)</h3>
                     <p class="description">
-                      <strong>Krizmatic Digital Solution, Lalitpur</strong><br>
-                      • Built dynamic web applications using Laravel &amp; Eloquent ORM<br>
-                      • Collaborated with the team to deliver features and fix bugs
+                      <strong>Krizmatic Digital Solution, Lalitpur</strong><br><br>
+                      Built dynamic web applications using Laravel and Eloquent ORM, and collaborated closely with the
+                      team to deliver features and resolve bugs throughout the development cycle.
                     </p>
                   </div>
                 </a>
               </div>
-
             </div>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- ── Portfolio ──────────────────────────── -->
+    <!-- ── PORTFOLIO ──────────────────────────── -->
     <section id="portfolio" class="portfolio section light-background">
       <div class="container section-title" data-aos="fade-up">
         <h2>My Projects</h2>
@@ -689,6 +380,114 @@
       </div>
       <div class="container">
         <div class="portfolio-grid" id="portfolioGrid"></div>
+      </div>
+    </section>
+
+    <!-- ── CONTACT ────────────────────────────── -->
+    <section id="contact" class="contact-section">
+      <div class="container section-title" data-aos="fade-up">
+        <h2>Contact</h2>
+        <p>Have a project in mind or want to collaborate?</p>
+      </div>
+
+      <div class="container" data-aos="fade-up" data-aos-delay="100">
+        <div class="contact-wrapper">
+
+          <!-- Left: Info -->
+          <div class="contact-info-card">
+            <h3>Let's Talk 👋</h3>
+            <p>I'm available for freelance projects, full-time roles, and collaborations. Reach out anytime!</p>
+
+            <div class="contact-info-item">
+              <div class="contact-info-icon"><i class="bi bi-geo-alt-fill"></i></div>
+              <div class="contact-info-text">
+                <strong>Location</strong>
+                <span>Lalitpur, Nepal</span>
+              </div>
+            </div>
+
+            <div class="contact-info-item">
+              <div class="contact-info-icon"><i class="bi bi-envelope-fill"></i></div>
+              <div class="contact-info-text">
+                <strong>Email</strong>
+                <span><a href="mailto:albina.khadkaoo6@gmail.com">albina.khadkaoo6@gmail.com</a></span>
+              </div>
+            </div>
+
+            <div class="contact-socials">
+              <a href="https://github.com/AlbinaKhadka" class="contact-social-link" title="GitHub" target="_blank">
+                <i class="bi bi-github"></i>
+              </a>
+              <a href="https://www.linkedin.com/in/albinakhadka/" class="contact-social-link" title="LinkedIn" target="_blank">
+                <i class="bi bi-linkedin"></i>
+              </a>
+            </div>
+          </div>
+
+          <!-- Right: Form -->
+          <div class="contact-form-card">
+            <h3>Send Me a Message</h3>
+
+            <form id="contactForm" novalidate>
+              <div class="cf-row">
+                <div class="cf-group">
+                  <label>Full Name <span>*</span></label>
+                  <input type="text" id="cf_name" class="cf-input" placeholder="Your full name" required>
+                </div>
+                <div class="cf-group">
+                  <label>Email Address <span>*</span></label>
+                  <input type="email" id="cf_email" class="cf-input" placeholder="your@email.com" required>
+                </div>
+              </div>
+
+              <div class="cf-group">
+                <label>Subject <span>*</span></label>
+                <input type="text" id="cf_subject" class="cf-input" placeholder="What's this about?" required>
+              </div>
+
+              <div class="cf-group">
+                <label>Message <span>*</span></label>
+                <textarea id="cf_message" class="cf-textarea" placeholder="Tell me about your enquiry..." required></textarea>
+              </div>
+
+              <button type="submit" class="cf-submit-btn" id="cfSubmitBtn">
+                <span class="cf-spinner" id="cfSpinner"></span>
+                <i class="bi bi-send-fill" id="cfSendIcon"></i>
+                <span id="cfBtnText">Send Message</span>
+              </button>
+
+              <div class="cf-alert cf-alert-success" id="cfAlertSuccess">
+                <i class="bi bi-check-circle-fill"></i>
+                <span>Message sent! I'll get back to you soon. 🎉</span>
+              </div>
+
+              <div class="cf-alert cf-alert-error" id="cfAlertError">
+                <i class="bi bi-exclamation-triangle-fill"></i>
+                <span id="cfErrorMsg">Something went wrong. Please try again or email me directly.</span>
+              </div>
+            </form>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ── RESUME / CV ────────────────────────── -->
+    <section id="services" class="cv-services-section">
+      <div class="container section-title" data-aos="fade-up">
+        <h2>Resume</h2>
+      </div>
+      <div class="container" data-aos="fade-up" data-aos-delay="100">
+        <div class="cv-card">
+          <div class="cv-card-icon">
+            <i class="bi bi-file-earmark-person"></i>
+          </div>
+          <h3>My Curriculum Vitae</h3>
+          <button class="cv-view-btn" id="cvViewBtn" onclick="cvOpenAndUnlock()">
+            <i class="bi bi-eye"></i>
+            <span>View CV</span>
+          </button>
+        </div>
       </div>
     </section>
 
@@ -712,7 +511,7 @@
   <div class="pf-modal-backdrop" id="pfModalBackdrop" role="dialog" aria-modal="true" aria-labelledby="pfModalTitle">
     <div class="pf-modal-box" id="pfModalBox">
       <div class="pf-modal-hero">
-        <img id="pfModalImg" src="" alt="" class="pf-modal-img"/>
+        <img id="pfModalImg" src="" alt="" class="pf-modal-img" />
         <div class="pf-modal-badge" id="pfModalBadge"></div>
         <button class="pf-modal-close" id="pfModalClose" aria-label="Close modal">
           <i class="bi bi-x-lg"></i>
@@ -730,27 +529,14 @@
     </div>
   </div>
 
-  <!-- Vendor JS -->
-  <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-  <script src="assets/vendor/php-email-form/validate.js"></script>
-  <script src="assets/vendor/aos/aos.js"></script>
-  <script src="assets/vendor/typed.js/typed.umd.js"></script>
-  <script src="assets/vendor/purecounter/purecounter_vanilla.js"></script>
-  <script src="assets/vendor/waypoints/noframework.waypoints.js"></script>
-  <script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
-  <script src="assets/vendor/imagesloaded/imagesloaded.pkgd.min.js"></script>
-  <script src="assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
-  <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
-  <script src="assets/js/main.js"></script>
-
-  <!-- Portfolio Script -->
+  <!-- ── Portfolio Script ──────────────────── -->
   <script>
     const pfProjects = [
       {
         title: "Ward-1 Lalitpur",
         badge: "Government",
         desc: "Government project including a full website, Management Information System (MIS), and backend API for a mobile app — developed while leading the entire project team. Built to modernize civic services and digitize government workflows for Ward-1, Lalitpur Metropolitan City.",
-        tech: ["HTML","CSS","JavaScript","Laravel","Voyager","MySQL"],
+        tech: ["HTML", "CSS", "JavaScript", "Laravel", "Voyager", "MySQL"],
         link: "https://ward1lmc.com/",
         img: "assets/img/projects/ward.png",
         ph: "Ward-1+Lalitpur"
@@ -759,7 +545,7 @@
         title: "Balloon Nepal",
         badge: "Tourism",
         desc: "Nepal's first commercial hot air balloon company offering online booking and scenic sunrise & sunset flights in Pokhara. Includes full booking management, customer inquiry handling, and flight scheduling system.",
-        tech: ["HTML","CSS","JavaScript","Laravel","MySQL"],
+        tech: ["HTML", "CSS", "JavaScript", "Laravel", "MySQL"],
         link: "https://balloonnepal.com/",
         img: "assets/img/projects/Book-a-Hot-Air-Balloon-Ride-in-Nepal-09-25-2025_11_34_AM.png",
         ph: "Balloon+Nepal"
@@ -768,7 +554,7 @@
         title: "Education Asia Consulting",
         badge: "Education",
         desc: "A study abroad consulting platform where I built the Laravel backend with Voyager for admin management, handling university listings, appointment bookings, scholarships, and core consulting features for students seeking opportunities abroad.",
-        tech: ["HTML","CSS","JavaScript","Laravel","Voyager","MySQL"],
+        tech: ["HTML", "CSS", "JavaScript", "Laravel", "Voyager", "MySQL"],
         link: "https://www.educationasia.com/",
         img: "assets/img/projects/Education-Asia-09-25-2025_12_02_PM.png",
         ph: "Education+Asia"
@@ -777,7 +563,7 @@
         title: "Shiva Holidays Treks",
         badge: "Travel",
         desc: "A travel and tourism website showcasing trekking and tour packages, detailed itineraries, destinations, and online booking features for adventure seekers exploring Nepal's Himalayan landscapes.",
-        tech: ["HTML","CSS","JavaScript","Laravel","Voyager","MySQL"],
+        tech: ["HTML", "CSS", "JavaScript", "Laravel", "Voyager", "MySQL"],
         link: "https://www.shivaholidays.com/",
         img: "assets/img/projects/shivatreks.png",
         ph: "Shiva+Treks"
@@ -786,7 +572,7 @@
         title: "Omega International Pvt Ltd",
         badge: "Recruitment",
         desc: "A manpower recruitment platform connecting global employers with skilled Nepali professionals. Features backend management for clients, services, blogs, CV generation, and appointment booking systems.",
-        tech: ["HTML","CSS","JavaScript","Laravel","Voyager","MySQL"],
+        tech: ["HTML", "CSS", "JavaScript", "Laravel", "Voyager", "MySQL"],
         link: "https://omeganepal.com/",
         img: "assets/img/projects/omega.png",
         ph: "Omega+International"
@@ -794,8 +580,8 @@
       {
         title: "Bizz Education",
         badge: "Consulting",
-        desc: "An education consulting website providing expert academic guidance to students, featuring MIS and website management, appointment booking, email and contact systems, and 'Apply Now' functionality to support the complete student counseling process.",
-        tech: ["HTML","CSS","JavaScript","Laravel","Voyager","MySQL"],
+        desc: "An education consulting website providing expert academic guidance to students, featuring MIS and website management, appointment booking, email and contact systems, and 'Apply Now' functionality.",
+        tech: ["HTML", "CSS", "JavaScript", "Laravel", "Voyager", "MySQL"],
         link: "https://bizzeducation.com/",
         img: "assets/img/projects/bizz.png",
         ph: "Bizz+Education"
@@ -803,8 +589,8 @@
       {
         title: "TukuTuku Nepal",
         badge: "E-Commerce",
-        desc: "An e-commerce baby and maternity clothing platform with a custom CRM supporting order management, customer management, product and supplier management, user roles, and enquiry handling — built for Nepali parents.",
-        tech: ["HTML","CSS","JavaScript","Laravel","Voyager","MySQL"],
+        desc: "An e-commerce baby and maternity clothing platform with a custom CRM supporting order management, customer management, product and supplier management, user roles, and enquiry handling.",
+        tech: ["HTML", "CSS", "JavaScript", "Laravel", "Voyager", "MySQL"],
         link: "https://tukutukunepal.com/",
         img: "assets/img/projects/TukuTukuNepal.png",
         ph: "TukuTuku+Nepal"
@@ -888,6 +674,103 @@
     pfModalClose.addEventListener('click', pfCloseModal);
     pfBackdrop.addEventListener('click', e => { if (e.target === pfBackdrop) pfCloseModal(); });
     document.addEventListener('keydown', e => { if (e.key === 'Escape') pfCloseModal(); });
+  </script>
+
+  <!-- ── CV Script ─────────────────────────── -->
+  <script>
+    function cvOpenAndUnlock() {
+      window.open('assets/docs/albina-khadka-Mid level developer-cv.pdf', '_blank');
+      setTimeout(function() {
+        var btn = document.getElementById('cvViewBtn');
+        btn.innerHTML = '<i class="bi bi-check-circle"></i><span>Viewed ✓</span>';
+        btn.style.background = 'linear-gradient(135deg, #6c757d, #495057)';
+        btn.style.boxShadow  = 'none';
+        btn.style.cursor     = 'default';
+        btn.onclick = null;
+      }, 600);
+    }
+  </script>
+
+  <!-- ── Vendor JS ──────────────────────────── -->
+  <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="assets/vendor/php-email-form/validate.js"></script>
+  <script src="assets/vendor/aos/aos.js"></script>
+  <script src="assets/vendor/typed.js/typed.umd.js"></script>
+  <script src="assets/vendor/purecounter/purecounter_vanilla.js"></script>
+  <script src="assets/vendor/waypoints/noframework.waypoints.js"></script>
+  <script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
+  <script src="assets/vendor/imagesloaded/imagesloaded.pkgd.min.js"></script>
+  <script src="assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
+  <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
+  <script src="assets/js/main.js"></script>
+
+  <!-- ── EmailJS ───────────────────────────── -->
+  <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+  <script>
+    const EMAILJS_PUBLIC_KEY   = 'arzTJVlio-J2lxIoe';
+    const EMAILJS_SERVICE_ID   = 'service_33u7qau';
+    const EMAILJS_TEMPLATE_ID  = 'template_pdho8oc';
+
+    emailjs.init(EMAILJS_PUBLIC_KEY);
+
+    document.getElementById('contactForm').addEventListener('submit', function(e) {
+      e.preventDefault();
+
+      var name    = document.getElementById('cf_name').value.trim();
+      var email   = document.getElementById('cf_email').value.trim();
+      var subject = document.getElementById('cf_subject').value.trim();
+      var message = document.getElementById('cf_message').value.trim();
+
+      if (!name || !email || !subject || !message) {
+        showError('Please fill in all required fields.');
+        return;
+      }
+
+      var emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+      if (!emailRegex.test(email)) {
+        showError('Please enter a valid email address.');
+        return;
+      }
+
+      setLoading(true);
+      hideAlerts();
+
+      emailjs.send(EMAILJS_SERVICE_ID, EMAILJS_TEMPLATE_ID, {
+        name: name, email: email, title: subject, message: message
+      })
+      .then(function() {
+        setLoading(false);
+        document.getElementById('cfAlertSuccess').classList.add('show');
+        document.getElementById('contactForm').reset();
+        setTimeout(function() {
+          document.getElementById('cfAlertSuccess').classList.remove('show');
+        }, 6000);
+      })
+      .catch(function(err) {
+        setLoading(false);
+        showError('Failed to send. Please email me at albina.khadkaoo6@gmail.com');
+        console.error('EmailJS Error:', err);
+      });
+    });
+
+    function setLoading(isLoading) {
+      document.getElementById('cfSubmitBtn').disabled = isLoading;
+      document.getElementById('cfSpinner').style.display  = isLoading ? 'block' : 'none';
+      document.getElementById('cfSendIcon').style.display = isLoading ? 'none'  : 'inline';
+      document.getElementById('cfBtnText').textContent    = isLoading ? 'Sending…' : 'Send Message';
+    }
+
+    function showError(msg) {
+      document.getElementById('cfErrorMsg').textContent = msg;
+      var el = document.getElementById('cfAlertError');
+      el.classList.add('show');
+      setTimeout(function() { el.classList.remove('show'); }, 8000);
+    }
+
+    function hideAlerts() {
+      document.getElementById('cfAlertSuccess').classList.remove('show');
+      document.getElementById('cfAlertError').classList.remove('show');
+    }
   </script>
 
 </body>
