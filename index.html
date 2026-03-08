@@ -29,38 +29,41 @@
 
   <!-- ── HEADER ─────────────────────────────── -->
   <header id="header" class="header dark-background d-flex flex-column">
-    <i class="header-toggle d-xl-none bi bi-list"></i>
+  <i class="header-toggle d-xl-none bi bi-list"></i>
 
-    <div class="profile-img"></div>
+  <div class="profile-img"></div>
 
-    <a href="index.html" class="logo d-flex align-items-center justify-content-center">
-      <h1 class="sitename">ALBINA KHADKA</h1>
+  <a href="/"
+     class="logo d-flex align-items-center justify-content-center"
+     onclick="event.preventDefault();history.replaceState(null,'','/');window.scrollTo({top:0,behavior:'smooth'});">
+    <h1 class="sitename">ALBINA KHADKA</h1>
+  </a>
+
+  <div class="social-links text-center">
+    <a href="https://github.com/AlbinaKhadka" class="github" target="_blank">
+      <i class="bi bi-github"></i>
     </a>
+    <a href="https://www.linkedin.com/in/albinakhadka/" class="linkedin">
+      <i class="bi bi-linkedin"></i>
+    </a>
+  </div>
 
-    <div class="social-links text-center">
-      <!-- <a href="mailto:albina.khadkaoo6@gmail.com" class="gmail" target="_blank">
-        <i class="bi bi-envelope-fill"></i>
-      </a> -->
-      <a href="https://github.com/AlbinaKhadka" class="github" target="_blank">
-        <i class="bi bi-github"></i>
-      </a>
-      <a href="https://www.linkedin.com/in/albinakhadka/" class="linkedin">
-        <i class="bi bi-linkedin"></i>
-      </a>
-    </div>
-
-    <nav id="navmenu" class="navmenu">
-      <ul>
-        <li><a href="#hero" class="active"><i class="bi bi-house navicon"></i> Home</a></li>
-        <li><a href="#about"><i class="bi bi-person navicon"></i> About</a></li>
-        <li><a href="#skills"><i class="bi bi-stack navicon"></i> Tech Stack</a></li>
-        <li><a href="#resume"><i class="bi bi-file-earmark-text navicon"></i> Experience</a></li>
-        <li><a href="#portfolio"><i class="bi bi-images navicon"></i> Projects</a></li>
-        <li><a href="#contact"><i class="bi bi-envelope navicon"></i> Contact</a></li>
-        <!-- <li><a href="#services"><i class="bi bi-hdd-stack navicon"></i> Resume</a></li> -->
-      </ul>
-    </nav>
-  </header>
+  <nav id="navmenu" class="navmenu">
+    <ul>
+      <li>
+        <a href="/" class="active"
+           onclick="event.preventDefault();history.replaceState(null,'','/');window.scrollTo({top:0,behavior:'smooth'});">
+          <i class="bi bi-house navicon"></i> Home
+        </a>
+      </li>
+      <li><a href="#about"><i class="bi bi-person navicon"></i> About</a></li>
+      <li><a href="#skills"><i class="bi bi-stack navicon"></i> Tech Stack</a></li>
+      <li><a href="#resume"><i class="bi bi-file-earmark-text navicon"></i> Experience</a></li>
+      <li><a href="#portfolio"><i class="bi bi-images navicon"></i> Projects</a></li>
+      <li><a href="#contact"><i class="bi bi-envelope navicon"></i> Contact</a></li>
+    </ul>
+  </nav>
+</header>
 
   <main class="main">
 
@@ -114,9 +117,10 @@
 
           <!-- Left: ID Card -->
           <div class="about-id-card">
-            <div class="about-avatar-ring">
-              <i class="bi bi-person-fill"></i>
-            </div>
+           <div class="about-avatar-ring">
+  <img src="assets/img/me.png" alt="Albina Khadka" 
+       style="width:100%; height:100%; object-fit:cover; border-radius:50%;">
+</div>
 
             <div class="about-id-name">Albina Khadka</div>
             <div class="about-id-role">Laravel Developer</div>
@@ -176,7 +180,7 @@
                 <div class="stat-lbl">Projects</div>
               </div>
               <div class="about-stat-box">
-                <div class="stat-num">3</div>
+                <div class="stat-num">2</div>
                 <div class="stat-lbl">Companies</div>
               </div>
               <div class="about-stat-box">
@@ -355,7 +359,7 @@
                   <div class="content">
                     <h3 class="title">Web Developer (Internship)</h3>
                     <p class="description">
-                      <strong>Krizmatic Digital Solution, Lalitpur</strong><br><br>
+                      <strong>Krizmatic Digital Solution</strong><br><br>
                       Built dynamic web applications using Laravel and Eloquent ORM, and collaborated closely with the
                       team to deliver features and resolve bugs throughout the development cycle.
                     </p>
@@ -769,7 +773,110 @@
       document.getElementById('cfAlertSuccess').classList.remove('show');
       document.getElementById('cfAlertError').classList.remove('show');
     }
-  </script>
+  </script><script>
+  document.addEventListener("DOMContentLoaded", function () {
+
+    // ── Slug map: section id → display URL ──
+    const slugMap = {
+      "hero"      : "/",
+      "about"     : "/#about-section",
+      "skills"    : "/#tech-stack",
+      "resume"    : "/#resume",
+      "portfolio" : "/#projects",
+      "contact"   : "/#contact"
+    };
+
+    // ── Clean URL map (what user sees in address bar) ──
+    const cleanURLMap = {
+      "hero"      : "/",
+      "about"     : "/about",
+      "skills"    : "/tech-stack",
+      "resume"    : "/resume",
+      "portfolio" : "/projects",
+      "contact"   : "/contact"
+    };
+
+    // ── 1. Strip index.html on load ──
+    (function cleanInitialURL() {
+      let path = location.pathname.replace(/\/index\.html$/i, "/");
+      if (location.pathname !== path) {
+        history.replaceState(null, "", path + location.hash);
+      }
+    })();
+
+    // ── 2. Nav click handler ──
+    const navLinks = document.querySelectorAll("#navmenu a");
+
+    navLinks.forEach((link) => {
+      link.addEventListener("click", function (e) {
+        const href = this.getAttribute("href");
+
+        // Home
+        if (href === "/") {
+          e.preventDefault();
+          history.replaceState(null, "", "/");
+          window.scrollTo({ top: 0, behavior: "smooth" });
+          setActive(this);
+          return;
+        }
+
+        // Section anchor links
+        if (href && href.startsWith("#")) {
+          e.preventDefault();
+          const sectionId = href.replace("#", "");
+          const target = document.getElementById(sectionId);
+          if (target) {
+            target.scrollIntoView({ behavior: "smooth" });
+            // Show clean URL like /about, /resume etc.
+            const cleanURL = cleanURLMap[sectionId] || "/" + sectionId;
+            history.replaceState(null, "", cleanURL);
+            setActive(this);
+          }
+        }
+      });
+    });
+
+    // ── 3. Set active link helper ──
+    function setActive(activeLink) {
+      navLinks.forEach((l) => l.classList.remove("active"));
+      activeLink.classList.add("active");
+    }
+
+    // ── 4. Scroll spy: update active + URL on scroll ──
+    const sections = document.querySelectorAll("section[id]");
+
+    function onScroll() {
+      let currentId = "";
+
+      sections.forEach((section) => {
+        const sectionTop = section.offsetTop - 120;
+        if (window.scrollY >= sectionTop) {
+          currentId = section.getAttribute("id");
+        }
+      });
+
+      navLinks.forEach((link) => {
+        link.classList.remove("active");
+        const href = link.getAttribute("href");
+
+        if (!currentId || currentId === "hero") {
+          // At top — show clean root URL
+          if (href === "/") link.classList.add("active");
+          history.replaceState(null, "", "/");
+        } else {
+          // On a section — show clean URL like /about
+          const cleanURL = cleanURLMap[currentId] || "/" + currentId;
+          if (href === "#" + currentId) link.classList.add("active");
+          history.replaceState(null, "", cleanURL);
+        }
+      });
+    }
+
+    window.addEventListener("scroll", onScroll);
+    onScroll(); // run once on load
+
+  });
+</script>
 
 </body>
 </html>
