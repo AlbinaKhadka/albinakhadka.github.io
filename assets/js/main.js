@@ -59,12 +59,27 @@
    * Scroll top button
    */
   let scrollTop = document.querySelector('.scroll-top');
+  let lastScrollTopPosition = 0;
 
   function toggleScrollTop() {
     if (scrollTop) {
+      let st = window.pageYOffset || document.documentElement.scrollTop;
+      
+      // Show/hide based on position
       window.scrollY > 100 ? scrollTop.classList.add('active') : scrollTop.classList.remove('active');
+      
+      // Rotate based on scroll direction
+      if (st > lastScrollTopPosition) {
+        // Scrolling down -> point down
+        scrollTop.style.transform = 'rotate(180deg)';
+      } else {
+        // Scrolling up -> point up
+        scrollTop.style.transform = 'rotate(0deg)';
+      }
+      lastScrollTopPosition = st <= 0 ? 0 : st;
     }
   }
+  
   scrollTop.addEventListener('click', (e) => {
     e.preventDefault();
     window.scrollTo({
@@ -225,5 +240,48 @@
   }
   window.addEventListener('load', navmenuScrollspy);
   document.addEventListener('scroll', navmenuScrollspy);
+
+  /**
+   * Theme toggle and persistence
+   */
+  const themeToggleBtn = document.querySelector('#themeToggleBtn');
+  const savedTheme = localStorage.getItem('theme');
+
+  function updateThemeIcon() {
+    if (!themeToggleBtn) return;
+    const icon = themeToggleBtn.querySelector('i');
+    if (!icon) return;
+    if (document.body.classList.contains('light-mode')) {
+      icon.className = 'bi bi-brightness-high-fill';
+      themeToggleBtn.setAttribute('aria-label', 'Switch to dark mode');
+    } else {
+      icon.className = 'bi bi-moon-stars-fill';
+      themeToggleBtn.setAttribute('aria-label', 'Switch to light mode');
+    }
+  }
+
+  function applyTheme(theme) {
+    if (theme === 'light') {
+      document.body.classList.add('light-mode');
+    } else {
+      document.body.classList.remove('light-mode');
+    }
+    localStorage.setItem('theme', theme);
+    updateThemeIcon();
+  }
+
+  if (themeToggleBtn) {
+    themeToggleBtn.addEventListener('click', () => {
+      const nextTheme = document.body.classList.contains('light-mode') ? 'dark' : 'light';
+      applyTheme(nextTheme);
+    });
+  }
+
+  if (savedTheme === 'light' || savedTheme === 'dark') {
+    applyTheme(savedTheme);
+  } else {
+    const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+    applyTheme(prefersDark ? 'dark' : 'light');
+  }
 
 })();

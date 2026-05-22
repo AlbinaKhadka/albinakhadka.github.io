@@ -12,7 +12,7 @@
   <!-- Fonts -->
   <link href="https://fonts.googleapis.com" rel="preconnect">
   <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&family=Raleway:wght@300;400;500;600;700&family=Sora:wght@400;600;700;800&family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@300;400;500;600;700&family=Poppins:wght@300;400;500;600;700;800&family=Raleway:wght@300;400;500;600;700&family=Sora:wght@400;600;700;800&display=swap" rel="stylesheet">
 
   <!-- Vendor CSS -->
   <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
@@ -26,6 +26,13 @@
 </head>
 
 <body class="index-page">
+
+  <!-- Theme Switcher Fixed Top Right -->
+  <div class="theme-switcher text-center">
+    <button id="themeToggleBtn" class="theme-toggle" type="button" aria-label="Toggle light and dark mode">
+      <i class="bi bi-moon-stars-fill"></i>
+    </button>
+  </div>
 
   <!-- ── HEADER ─────────────────────────────── -->
   <header id="header" class="header dark-background d-flex flex-column">
@@ -47,6 +54,8 @@
       <i class="bi bi-linkedin"></i>
     </a>
   </div>
+
+
 
   <nav id="navmenu" class="navmenu">
     <ul>
@@ -84,7 +93,7 @@
 
         <p>
           I'm a&nbsp;
-          <span class="typed" data-typed-items="Full Stack Developer,Laravel Developer,PHP Developer"></span>
+          <span class="typed" data-typed-items="Full Stack Developer,Laravel Developer,Team Lead,Backend Developer,API Developer"></span>
           <span class="typed-cursor typed-cursor--blink" aria-hidden="true"></span>
         </p>
 
@@ -108,7 +117,7 @@
     <section id="about" class="about-section">
       <div class="container">
         <div class="section-title" data-aos="fade-up">
-          <span style="display:inline-block;font-size:0.75rem;font-weight:700;letter-spacing:0.12em;text-transform:uppercase;color:#149ddd;margin-bottom:10px;">Who I Am</span>
+          <span style="display:inline-block;font-size:0.75rem;font-weight:700;letter-spacing:0.12em;text-transform:uppercase;color:var(--theme-primary);margin-bottom:10px;">Who I Am</span>
           <h2>About Me</h2>
           <!-- <p>Crafting clean, performant web experiences with a passion for thoughtful engineering.</p> -->
         </div>
@@ -116,14 +125,14 @@
         <div class="about-inner" data-aos="fade-up" data-aos-delay="100">
 
           <!-- Left: ID Card -->
-          <div class="about-id-card">
+          <div class="about-id-card" data-aos="fade-right" data-aos-delay="150">
            <div class="about-avatar-ring">
   <img src="assets/img/me.png" alt="Albina Khadka" 
        style="width:100%; height:100%; object-fit:cover; border-radius:50%;">
 </div>
 
             <div class="about-id-name">Albina Khadka</div>
-            <div class="about-id-role">Laravel Developer</div>
+            <div class="about-id-role">Mid-Level Full Stack Developer</div>
             <div class="about-id-divider"></div>
 
             <div class="about-id-facts">
@@ -152,14 +161,14 @@
                 <div class="fact-icon"><i class="bi bi-briefcase-fill"></i></div>
                 <div class="fact-info">
                   <span class="fact-label">Status</span>
-                  <span class="fact-value">Available for Freelance</span>
+                  <span class="fact-value">Open to Full-Time & Freelance</span>
                 </div>
               </div>
             </div>
           </div>
 
           <!-- Right: Content -->
-          <div class="about-content">
+          <div class="about-content" data-aos="fade-left" data-aos-delay="220">
             <!-- <div class="about-tag">
               <span class="blink"></span>
               Open to opportunities
@@ -171,12 +180,12 @@
             </h3> -->
 
             <p class="about-bio">
-            I’m a Web Developer based in Lalitpur, Nepal, with practical experience in Laravel, PHP, JavaScript, HTML, CSS, Tailwind CSS, Vue.js, and React. I enjoy building scalable and efficient web applications with clean, maintainable code. My focus is on creating reliable digital solutions with strong architecture and good user experience. I’m passionate about learning new technologies and continuously improving my development skills to deliver better products.
+            I'm a Full Stack Developer based in Lalitpur, Nepal with 2.5+ years of experience building scalable web applications across banking, government MIS, vendor CRM, education, and travel & tourism sectors. I enjoy clean architecture, maintainable code, and delivering end-to-end solutions. Led the Internal Audit Management System and GRC platform for Shangrila Bank as Team Lead. Passionate about continuous learning and building impactful digital products.
             </p>
 
             <div class="about-stats-row">
               <div class="about-stat-box">
-                <div class="stat-num">7+</div>
+                <div class="stat-num">8+</div>
                 <div class="stat-lbl">Projects</div>
               </div>
               <div class="about-stat-box">
@@ -188,7 +197,7 @@
                 <div class="stat-lbl">Technologies</div>
               </div>
               <div class="about-stat-box">
-                <div class="stat-num">2+</div>
+                <div class="stat-num">2.5+</div>
                 <div class="stat-lbl">Years Exp.</div>
               </div>
             </div>
@@ -327,41 +336,38 @@
         <div class="row">
           <div class="col">
             <div class="main-timeline">
-              <div class="timeline">
+              <div class="timeline" data-aos="fade-up" data-aos-delay="150">
                 <a href="#" class="timeline-content">
                   <span class="timeline-year">2026</span>
                   <div class="content">
                     <h3 class="title">Laravel Developer</h3>
                     <p class="description">
-                      <strong>Trilokya Technology</strong><br><br>
-                     Worked on a product-based GRC (Governance, Risk, and Compliance) web application using Laravel, implementing RBAC, compliance framework mapping, audit modules, and risk management features for enterprise use.
+                      <strong>Trilokya Technology</strong><br>
+                      Led development of an Internal Audit Management System and GRC (Governance, Risk & Compliance) platform for Shangrila Bank as Team Lead. Managed the development team, overseeing task allocation, code reviews, and timely delivery. Built backend systems and REST APIs using Laravel, HTML, CSS, JavaScript, and Docker.
                     </p>
                   </div>
                 </a>
               </div>
-              <div class="timeline">
+              <div class="timeline" data-aos="fade-up" data-aos-delay="220">
                 <a href="#" class="timeline-content">
                   <span class="timeline-year">2025</span>
                   <div class="content">
                     <h3 class="title">Web Developer</h3>
                     <p class="description">
-                      <strong>Krizmatic Digital Solution</strong><br><br>
-                      Contributed to multiple team-based web development projects, worked on vendor record management
-                      and workflow improvements, developed appointment booking features, and built admin panels for
-                      government mobile applications.
+                      <strong>Krizmatic Digital Solution</strong><br>
+                      Developed a Government MIS portal and admin panel integrated with a government mobile application. Built a Vendor CRM system to manage vendor records and streamline internal workflows. Implemented a consulting and appointment booking system with dynamic scheduling logic. Delivered travel and tourism package booking websites including a hot air balloon booking platform. Tech stack: Laravel, PHP, JavaScript, HTML, CSS, Tailwind CSS, Vue.js, MySQL, Voyager.
                     </p>
                   </div>
                 </a>
               </div>
-              <div class="timeline">
+              <div class="timeline" data-aos="fade-up" data-aos-delay="280">
                 <a href="#" class="timeline-content">
                   <span class="timeline-year">2024</span>
                   <div class="content">
                     <h3 class="title">Web Developer (Internship)</h3>
                     <p class="description">
-                      <strong>Krizmatic Digital Solution</strong><br><br>
-                      Built dynamic web applications using Laravel and Eloquent ORM, and collaborated closely with the
-                      team to deliver features and resolve bugs throughout the development cycle.
+                      <strong>Krizmatic Digital Solution</strong><br>
+                      Built dynamic web applications using Laravel, Eloquent ORM, PHP, HTML, CSS, and JavaScript on live client projects. Delivered features and resolved bugs efficiently in a collaborative team setting.
                     </p>
                   </div>
                 </a>
@@ -396,7 +402,7 @@
         <div class="contact-wrapper">
 
           <!-- Left: Info -->
-          <div class="contact-info-card">
+          <div class="contact-info-card" data-aos="fade-right" data-aos-delay="180">
             <h3>Let's Talk 👋</h3>
             <p>I'm available for freelance projects, full-time roles, and collaborations. Reach out anytime!</p>
 
@@ -427,7 +433,7 @@
           </div>
 
           <!-- Right: Form -->
-          <div class="contact-form-card">
+          <div class="contact-form-card" data-aos="fade-left" data-aos-delay="240">
             <h3>Send Me a Message</h3>
 
             <form id="contactForm" novalidate>
@@ -503,7 +509,7 @@
 
   <!-- Scroll Top -->
   <a href="#" id="scroll-top" class="scroll-top d-flex align-items-center justify-content-center">
-    <i class="bi bi-arrow-up-short"></i>
+    <i class="bi bi-rocket-fill"></i>
   </a>
 
   <!-- Preloader -->
@@ -535,10 +541,19 @@
   <script>
     const pfProjects = [
       {
+        title: "Internal Audit Management System",
+        badge: "Project-Based",
+        desc: "Led and developed a secure Internal Audit Management System and GRC (Governance, Risk & Compliance) platform for Shangrila Bank as Team Lead. Built risk assessment, risk calculation, and risk analysis modules for data-driven decision-making. Implemented audit workflow automation, operational issue tracking, and compliance management workflows.",
+        tech: ["Laravel", "HTML", "CSS", "JavaScript", "Docker", "MySQL"],
+        link: "https://shangrila.trilokyasoft.com/login",
+        img: "assets/img/projects/shangrila.png",
+        ph: "Shangrila+Bank"
+      },
+      {
         title: "Ward-1 Lalitpur",
         badge: "Government",
-        desc: "Government project including a full website, Management Information System (MIS), and backend API for a mobile app — developed while leading the entire project team. Built to modernize civic services and digitize government workflows for Ward-1, Lalitpur Metropolitan City.",
-        tech: ["HTML", "CSS", "JavaScript", "Laravel", "Voyager", "MySQL"],
+        desc: "Built a full Government MIS portal with admin panel and mobile app API integration for Ward-1 Lalitpur Metropolitan City. Developed modules for citizen complaints, government services, and blood request management. Implemented push notifications and optimized API performance.",
+        tech: ["Laravel", "PHP", "JavaScript", "HTML", "CSS", "Voyager", "MySQL"],
         link: "https://ward1lmc.com/",
         img: "assets/img/projects/ward.png",
         ph: "Ward-1+Lalitpur"
@@ -546,8 +561,8 @@
       {
         title: "Balloon Nepal",
         badge: "Tourism",
-        desc: "Nepal's first commercial hot air balloon company offering online booking and scenic sunrise & sunset flights in Pokhara. Includes full booking management, customer inquiry handling, and flight scheduling system.",
-        tech: ["HTML", "CSS", "JavaScript", "Laravel", "MySQL"],
+        desc: "Built flight scheduling, package management, and booking logic backend for Nepal's first commercial hot air balloon company. Includes customer inquiry handling and flight scheduling system.",
+        tech: ["Laravel", "PHP", "JavaScript", "HTML", "CSS", "MySQL"],
         link: "https://balloonnepal.com/",
         img: "assets/img/projects/Book-a-Hot-Air-Balloon-Ride-in-Nepal-09-25-2025_11_34_AM.png",
         ph: "Balloon+Nepal"
@@ -555,8 +570,8 @@
       {
         title: "Education Asia Consulting",
         badge: "Education",
-        desc: "A study abroad consulting platform where I built the Laravel backend with Voyager for admin management, handling university listings, appointment bookings, scholarships, and core consulting features for students seeking opportunities abroad.",
-        tech: ["HTML", "CSS", "JavaScript", "Laravel", "Voyager", "MySQL"],
+        desc: "Built the full Laravel backend for Education Asia's study-abroad consulting platform. Developed modules for appointments, counseling sessions, class scheduling, and university search. Delivered admin panel for content and user management.",
+        tech: ["Laravel", "PHP", "JavaScript", "HTML", "CSS", "Voyager", "MySQL"],
         link: "https://www.educationasia.com/",
         img: "assets/img/projects/Education-Asia-09-25-2025_12_02_PM.png",
         ph: "Education+Asia"
@@ -564,8 +579,8 @@
       {
         title: "Shiva Holidays Treks",
         badge: "Travel",
-        desc: "A travel and tourism website showcasing trekking and tour packages, detailed itineraries, destinations, and online booking features for adventure seekers exploring Nepal's Himalayan landscapes.",
-        tech: ["HTML", "CSS", "JavaScript", "Laravel", "Voyager", "MySQL"],
+        desc: "Developed travel package management with detailed itineraries and destination listings. Built inquiry and booking dashboards for seamless customer experience.",
+        tech: ["Laravel", "PHP", "JavaScript", "HTML", "CSS", "Voyager", "MySQL"],
         link: "https://www.shivaholidays.com/",
         img: "assets/img/projects/shivatreks.png",
         ph: "Shiva+Treks"
@@ -573,8 +588,8 @@
       {
         title: "Omega International Pvt Ltd",
         badge: "Recruitment",
-        desc: "A manpower recruitment platform connecting global employers with skilled Nepali professionals. Features backend management for clients, services, blogs, CV generation, and appointment booking systems.",
-        tech: ["HTML", "CSS", "JavaScript", "Laravel", "Voyager", "MySQL"],
+        desc: "Built a manpower recruitment platform connecting global employers with skilled Nepali professionals. Developed backend management for clients, services, blogs, CV generation, and appointment booking systems.",
+        tech: ["Laravel", "PHP", "JavaScript", "HTML", "CSS", "Voyager", "MySQL"],
         link: "https://omeganepal.com/",
         img: "assets/img/projects/omega.png",
         ph: "Omega+International"
@@ -582,8 +597,8 @@
       {
         title: "Bizz Education",
         badge: "Consulting",
-        desc: "An education consulting website providing expert academic guidance to students, featuring MIS and website management, appointment booking, email and contact systems, and 'Apply Now' functionality.",
-        tech: ["HTML", "CSS", "JavaScript", "Laravel", "Voyager", "MySQL"],
+        desc: "Built the full Laravel backend for Bizz Education's study-abroad consulting platform. Developed modules for appointments, counseling sessions, class scheduling, university search, and university listings. Delivered a comprehensive admin panel for content and user management.",
+        tech: ["Laravel", "PHP", "JavaScript", "HTML", "CSS", "Voyager", "MySQL"],
         link: "https://bizzeducation.com/",
         img: "assets/img/projects/bizz.png",
         ph: "Bizz+Education"
@@ -591,8 +606,8 @@
       {
         title: "TukuTuku Nepal",
         badge: "E-Commerce",
-        desc: "An e-commerce baby and maternity clothing platform with a custom CRM supporting order management, customer management, product and supplier management, user roles, and enquiry handling.",
-        tech: ["HTML", "CSS", "JavaScript", "Laravel", "Voyager", "MySQL"],
+        desc: "Built a multi-vendor CRM and marketplace backend managing customers, suppliers, vendors, orders, and categories. Implemented role-based access control for admin, vendor, and customer roles. Managed vendor records, billing records, and order workflows.",
+        tech: ["Laravel", "PHP", "JavaScript", "HTML", "CSS", "Voyager", "MySQL"],
         link: "https://tukutukunepal.com/",
         img: "assets/img/projects/TukuTukuNepal.png",
         ph: "TukuTuku+Nepal"
@@ -615,6 +630,9 @@
       card.setAttribute('role', 'button');
       card.setAttribute('tabindex', '0');
       card.setAttribute('aria-label', `View details for ${p.title}`);
+      card.setAttribute('data-aos', 'fade-up');
+      card.setAttribute('data-aos-delay', `${100 + i * 60}`);
+      card.setAttribute('data-aos-duration', '750');
 
       card.innerHTML = `
         <div class="pf-img-wrap">
@@ -649,6 +667,7 @@
       });
 
       pfGrid.appendChild(card);
+      setTimeout(() => card.classList.add('pf-card-show'), 160 + i * 80);
     });
 
     window.pfOpenModal = function(idx) {
@@ -676,21 +695,6 @@
     pfModalClose.addEventListener('click', pfCloseModal);
     pfBackdrop.addEventListener('click', e => { if (e.target === pfBackdrop) pfCloseModal(); });
     document.addEventListener('keydown', e => { if (e.key === 'Escape') pfCloseModal(); });
-  </script>
-
-  <!-- ── CV Script ─────────────────────────── -->
-  <script>
-    function cvOpenAndUnlock() {
-      window.open('assets/docs/albina-khadka-Mid level developer-cv.pdf', '_blank');
-      setTimeout(function() {
-        var btn = document.getElementById('cvViewBtn');
-        btn.innerHTML = '<i class="bi bi-check-circle"></i><span>Viewed ✓</span>';
-        btn.style.background = 'linear-gradient(135deg, #6c757d, #495057)';
-        btn.style.boxShadow  = 'none';
-        btn.style.cursor     = 'default';
-        btn.onclick = null;
-      }, 600);
-    }
   </script>
 
   <!-- ── Vendor JS ──────────────────────────── -->
